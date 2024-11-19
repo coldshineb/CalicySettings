@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:calicy_settings/Display/Display.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Internet/Internet.dart';
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        colorSchemeSeed: Colors.blue,
+        dialogTheme: DialogTheme(
+          backgroundColor: Colors.grey[100],
+        ),
         scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Calicy',
         cardTheme: CardTheme(
@@ -28,8 +33,17 @@ class MyApp extends StatelessWidget {
             side: BorderSide(color: Colors.grey.shade300, width: 0.5),
           ),
         ),
+        appBarTheme: const AppBarTheme(
+          color: Colors.white,
+          elevation: 1.0,
+          shadowColor: Colors.white,
+        ),
       ),
       darkTheme: ThemeData(
+        colorSchemeSeed: Colors.blue,
+        dialogTheme: DialogTheme(
+          backgroundColor: Colors.grey[900],
+        ),
         brightness: Brightness.dark,
         scaffoldBackgroundColor: Colors.black,
         fontFamily: 'Calicy',
@@ -40,6 +54,11 @@ class MyApp extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             side: BorderSide(color: Colors.grey.shade900, width: 0.5),
           ),
+        ),
+        appBarTheme: const AppBarTheme(
+          color: Colors.black,
+          elevation: 1.0,
+          shadowColor: Colors.white,
         ),
       ),
       themeMode: ThemeMode.system,
@@ -92,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
+                        CupertinoPageRoute(
                             builder: (context) => const InternetPage()));
                   },
                 ),
