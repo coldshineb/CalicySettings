@@ -183,30 +183,4 @@ class _WLANPageState extends State<WLANPage> with Components {
       ),
     );
   }
-
-  ListTile buildListTile({
-    required String title,
-    required VoidCallback onTap,
-    trailing,
-    subtitle,
-    icon,
-  }) {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundColor: Colors.transparent,
-        child: Icon(icon, color: Colors.grey[500]),
-      ),
-      title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
-      subtitle: subtitle != null
-          ? Text(
-              subtitle,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: Colors.grey),
-            )
-          : null,
-      trailing: trailing,
-      onTap: onTap,
-    );
-  }
 }

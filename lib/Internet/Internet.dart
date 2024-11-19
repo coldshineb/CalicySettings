@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Components.dart';
+import 'SIM/SIM.dart';
 import 'WLAN/WLAN.dart';
 
 class InternetPage extends StatefulWidget {
@@ -10,7 +12,7 @@ class InternetPage extends StatefulWidget {
   State<InternetPage> createState() => _InternetPageState();
 }
 
-class _InternetPageState extends State<InternetPage> {
+class _InternetPageState extends State<InternetPage> with Components {
   int _dnsMode = 1;
 
   @override
@@ -30,7 +32,7 @@ class _InternetPageState extends State<InternetPage> {
       ),
       body: ListView(
         children: [
-          _buildInternetListTile(
+          buildListTile(
             icon: Icons.signal_wifi_4_bar,
             title: '无线局域网',
             subtitle: '已连接到 Calicy_Public',
@@ -39,13 +41,16 @@ class _InternetPageState extends State<InternetPage> {
                   CupertinoPageRoute(builder: (context) => const WLANPage()));
             },
           ),
-          _buildInternetListTile(
+          buildListTile(
             icon: Icons.sim_card_outlined,
             title: '移动网络',
             subtitle: 'Calicy 移动',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  CupertinoPageRoute(builder: (context) => const SIMPage()));
+            },
           ),
-          _buildInternetListTile(
+          buildListTile(
             icon: Icons.airplanemode_active,
             title: '飞行模式',
             trailing: Switch(
@@ -54,25 +59,25 @@ class _InternetPageState extends State<InternetPage> {
             ),
             onTap: () {},
           ),
-          _buildInternetListTile(
+          buildListTile(
             icon: Icons.wifi_tethering,
             title: '热点和网络共享',
             subtitle: '已关闭',
             onTap: () {},
           ),
-          _buildInternetListTile(
+          buildListTile(
             icon: Icons.data_usage,
             title: '流量节省程序',
             subtitle: '已关闭',
             onTap: () {},
           ),
-          _buildInternetListTile(
+          buildListTile(
             icon: Icons.vpn_key,
             title: 'VPN',
             subtitle: '未连接',
             onTap: () {},
           ),
-          _buildInternetListTile(
+          buildListTile(
             title: '专用 DNS',
             subtitle: '自动',
             onTap: () {
@@ -133,7 +138,7 @@ class _InternetPageState extends State<InternetPage> {
                             ],
                           ),
                         ),
-                        buttonPadding: const EdgeInsets.all(10),
+                        buttonPadding: const EdgeInsets.all(16),
                         actions: [
                           TextButton(
                             onPressed: () {
@@ -151,39 +156,13 @@ class _InternetPageState extends State<InternetPage> {
                       ));
             },
           ),
-          _buildInternetListTile(
+          buildListTile(
             title: '自适应连接',
             subtitle: '已关闭',
             onTap: () {},
           ),
         ],
       ),
-    );
-  }
-
-  ListTile _buildInternetListTile({
-    required String title,
-    required VoidCallback onTap,
-    trailing,
-    subtitle,
-    icon,
-  }) {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundColor: Colors.transparent,
-        child: Icon(icon, color: Colors.grey[500]),
-      ),
-      title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
-      subtitle: subtitle != null
-          ? Text(
-              subtitle,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: Colors.grey),
-            )
-          : null,
-      trailing: trailing,
-      onTap: onTap,
     );
   }
 }

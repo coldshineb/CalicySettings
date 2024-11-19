@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 mixin class Components {
   ListTile buildListTile({
     required String title,
-    required VoidCallback onTap,
+    onTap,
     trailing,
     subtitle,
     icon,
