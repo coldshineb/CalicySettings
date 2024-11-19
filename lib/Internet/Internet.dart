@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
+import 'Hotspot/Hotspot.dart';
 import 'SIM/SIM.dart';
 import 'WLAN/WLAN.dart';
 
@@ -33,14 +34,29 @@ class _InternetPageState extends State<InternetPage> with Components {
       body: ListView(
         children: [
           buildListTile(
-            icon: Icons.signal_wifi_4_bar,
-            title: '无线局域网',
-            subtitle: '已连接到 Calicy_Public',
-            onTap: () {
-              Navigator.push(context,
-                  CupertinoPageRoute(builder: (context) => const WLANPage()));
-            },
-          ),
+              icon: Icons.signal_wifi_4_bar,
+              title: '无线局域网',
+              subtitle: '已连接到 Calicy_Public',
+              onTap: () {
+                Navigator.push(context,
+                    CupertinoPageRoute(builder: (context) => const WLANPage()));
+              },
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const VerticalDivider(
+                    thickness: 1,
+                  ),
+                  Switch(
+                    value: true,
+                    onChanged: (value) {
+                      setState(() {
+                        value = value;
+                      });
+                    },
+                  ),
+                ],
+              )),
           buildListTile(
             icon: Icons.sim_card_outlined,
             title: '移动网络',
@@ -63,7 +79,11 @@ class _InternetPageState extends State<InternetPage> with Components {
             icon: Icons.wifi_tethering,
             title: '热点和网络共享',
             subtitle: '已关闭',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  CupertinoPageRoute(builder: (context) => const HotspotPage()));
+
+            },
           ),
           buildListTile(
             icon: Icons.data_usage,

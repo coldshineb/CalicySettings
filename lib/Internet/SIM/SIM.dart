@@ -59,6 +59,29 @@ class _SIMPageState extends State<SIMPage> with Components {
             title: '添加 SIM 卡',
             onTap: () {},
           ),
+          const Divider(height: 1),
+          const ListTile(
+            title: Text(
+              '移动数据',
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 12,
+              ),
+            ),
+          ),
+          buildListTile(
+            title: '移动数据',
+            subtitle: '通过移动网络访问数据',
+            onTap: () {},
+            trailing: Switch(
+              value: true,
+              onChanged: (value) {
+                setState(() {
+                  value = value;
+                });
+              },
+            ),
+          ),
         ],
       ),
     );
