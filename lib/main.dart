@@ -2,6 +2,7 @@ import 'package:calicy_settings/Internet/Internet.dart';
 import 'package:flutter/material.dart';
 
 import 'Components.dart';
+import 'Devices/Devices.dart';
 import 'Display/Display.dart';
 import 'Internet/WLAN/WLAN.dart';
 
@@ -181,7 +182,7 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '连接的设备',
                   '蓝牙、打印机、近场通信和设备连接',
                   () {
-                    //navigate to general settings
+                    Navigator.push(context, calicyPageRoute(const DevicePage()));
                   },
                 ),
                 buildMainListTile(

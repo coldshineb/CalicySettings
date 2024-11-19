@@ -39,8 +39,7 @@ class _InternetPageState extends State<InternetPage> with Components {
               title: '无线局域网',
               subtitle: '已连接到 Calicy_Public',
               onTap: () {
-                Navigator.push(context,
-                    calicyPageRoute(const WLANPage()));
+                Navigator.push(context, calicyPageRoute(const WLANPage()));
               },
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -63,8 +62,7 @@ class _InternetPageState extends State<InternetPage> with Components {
             title: '移动网络',
             subtitle: 'Calicy 移动',
             onTap: () {
-              Navigator.push(context,
-                  calicyPageRoute(const SIMPage()));
+              Navigator.push(context, calicyPageRoute(const SIMPage()));
             },
           ),
           buildListTile(
@@ -81,8 +79,7 @@ class _InternetPageState extends State<InternetPage> with Components {
             title: '热点和网络共享',
             subtitle: '已关闭',
             onTap: () {
-              Navigator.push(context,
-                  calicyPageRoute(const HotspotPage()));
+              Navigator.push(context, calicyPageRoute(const HotspotPage()));
             },
           ),
           buildListTile(
@@ -90,8 +87,7 @@ class _InternetPageState extends State<InternetPage> with Components {
             title: '流量节省程序',
             subtitle: '已关闭',
             onTap: () {
-              Navigator.push(context,
-                  calicyPageRoute(const DataSaverPage()));
+              Navigator.push(context, calicyPageRoute(const DataSaverPage()));
             },
           ),
           buildListTile(
@@ -99,9 +95,11 @@ class _InternetPageState extends State<InternetPage> with Components {
             title: 'VPN',
             subtitle: '未连接',
             onTap: () {
-              Navigator.push(context,
-                  calicyPageRoute(const VPNPage()));
+              Navigator.push(context, calicyPageRoute(const VPNPage()));
             },
+          ),
+          Divider(
+            height: 1,
           ),
           buildListTile(
             title: '专用 DNS',
@@ -188,8 +186,12 @@ class _InternetPageState extends State<InternetPage> with Components {
           ),
           buildListTile(
             title: '自适应连接',
-            subtitle: '已关闭',
+            subtitle: '自动管理您的网络连接，从而延长电池续航时间并提升设备性能',
             onTap: () {},
+            trailing: Switch(
+              value: true,
+              onChanged: (value) {},
+            ),
           ),
         ],
       ),

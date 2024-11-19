@@ -60,6 +60,15 @@ class _WLANNetworkPreferencesPageState
             onTap: () {},
           ),
           const Divider(height: 1),
+          const ListTile(
+            title: Text(
+              '网络优选',
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 12,
+              ),
+            ),
+          ),
           _buildInternetListTile(
             icon: Icons.home_rounded,
             title: '自动开启无线局域网',
