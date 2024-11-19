@@ -19,48 +19,112 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorSchemeSeed: Colors.blue,
-        dialogTheme: DialogTheme(
-          backgroundColor: Colors.grey[100],
-        ),
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: 'Calicy',
-        cardTheme: CardTheme(
-          color: Colors.white,
-          elevation: 1.0,
-          shape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-            side: BorderSide(color: Colors.grey.shade300, width: 0.5),
+          colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.blue,
+            accentColor: Colors.blue,
+            brightness: Brightness.light,
           ),
-        ),
-        appBarTheme: const AppBarTheme(
-          color: Colors.white,
-          elevation: 1.0,
-          shadowColor: Colors.white,
-        ),
-      ),
+          dialogTheme: DialogTheme(
+            backgroundColor: Colors.grey[100],
+            shape: RoundedRectangleBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
+              side: BorderSide(color: Colors.grey.shade300, width: 0.5),
+            ),
+          ),
+          scaffoldBackgroundColor: Colors.white,
+          fontFamily: 'Calicy',
+          cardTheme: CardTheme(
+            color: Colors.white,
+            elevation: 1.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              side: BorderSide(color: Colors.grey.shade300, width: 0.5),
+            ),
+          ),
+          appBarTheme: const AppBarTheme(
+            foregroundColor: Colors.blue,
+            backgroundColor: Colors.white,
+            elevation: 1.0,
+            shadowColor: Colors.white,
+          ),
+          switchTheme: SwitchThemeData(
+            thumbColor: WidgetStateProperty.resolveWith((states) {
+              if (states.contains(WidgetState.selected)) {
+                return Colors.blue;
+              }
+              return Colors.white;
+            }),
+            trackColor: WidgetStateProperty.resolveWith((states) {
+              if (states.contains(WidgetState.selected)) {
+                return Colors.blue.shade100;
+              }
+              return Colors.grey.shade300;
+            }),
+          ),
+          iconTheme: IconThemeData(color: Colors.grey[500]),
+          inputDecorationTheme: const InputDecorationTheme(
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.blue),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey),
+            ),
+          ),
+          useMaterial3: false),
       darkTheme: ThemeData(
-        colorSchemeSeed: Colors.blue,
-        dialogTheme: DialogTheme(
-          backgroundColor: Colors.grey[900],
-        ),
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: Colors.black,
-        fontFamily: 'Calicy',
-        cardTheme: CardTheme(
-          color: Colors.grey[900],
-          elevation: 1.0,
-          shape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-            side: BorderSide(color: Colors.grey.shade900, width: 0.5),
+          colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.blue,
+            accentColor: Colors.blue,
+            brightness: Brightness.dark,
           ),
-        ),
-        appBarTheme: const AppBarTheme(
-          color: Colors.black,
-          elevation: 1.0,
-          shadowColor: Colors.white,
-        ),
-      ),
+          dialogTheme: DialogTheme(
+            backgroundColor: Colors.grey[900],
+            shape: RoundedRectangleBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
+              side: BorderSide(color: Colors.grey.shade900, width: 0.5),
+            ),
+          ),
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: Colors.black,
+          fontFamily: 'Calicy',
+          cardTheme: CardTheme(
+            color: Colors.grey[900],
+            elevation: 1.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              side: BorderSide(color: Colors.grey.shade900, width: 0.5),
+            ),
+          ),
+          appBarTheme: const AppBarTheme(
+            foregroundColor: Colors.blue,
+            backgroundColor: Colors.black,
+            elevation: 1.0,
+            shadowColor: Colors.white,
+          ),
+          switchTheme: SwitchThemeData(
+            thumbColor: WidgetStateProperty.resolveWith((states) {
+              if (states.contains(WidgetState.selected)) {
+                return Colors.blue;
+              }
+              return Colors.grey;
+            }),
+            trackColor: WidgetStateProperty.resolveWith((states) {
+              if (states.contains(WidgetState.selected)) {
+                return Colors.blue.shade100;
+              }
+              return Colors.grey.shade300;
+            }),
+          ),
+          iconTheme: IconThemeData(color: Colors.grey[500]),
+          inputDecorationTheme: const InputDecorationTheme(
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.blue),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey),
+            ),
+          ),
+          useMaterial3: false),
       themeMode: ThemeMode.system,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -102,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.blue.shade100,
                   Colors.blue,
                   Icons.wifi,
@@ -115,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             builder: (context) => const InternetPage()));
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.green.shade100,
                   Colors.green,
                   Icons.devices,
@@ -125,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.orange.shade100,
                   Colors.orange,
                   Icons.apps,
@@ -135,7 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.cyan.shade100,
                   Colors.cyan,
                   Icons.battery_full,
@@ -145,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.purple.shade100,
                   Colors.purple,
                   Icons.home,
@@ -156,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
                 //display
-                _buildListTile(
+                buildListTile(
                   Colors.orange.shade100,
                   Colors.orange[600]!,
                   Icons.brightness_6_outlined,
@@ -170,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.green.shade100,
                   Colors.green[300]!,
                   Icons.volume_up_outlined,
@@ -180,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.purple.shade100,
                   Colors.purple,
                   Icons.storage,
@@ -190,7 +254,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.blue.shade100,
                   Colors.blue[300]!,
                   Icons.remove_red_eye_outlined,
@@ -200,7 +264,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.cyan.shade100,
                   Colors.cyan,
                   Icons.location_on_outlined,
@@ -210,7 +274,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.green.shade100,
                   Colors.green,
                   Icons.lock_outline,
@@ -220,7 +284,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.orange.shade100,
                   Colors.orange[600]!,
                   Icons.account_circle_outlined,
@@ -230,7 +294,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.orange.shade100,
                   Colors.orange[600]!,
                   Icons.accessibility,
@@ -240,7 +304,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.green.shade100,
                   Colors.green[600]!,
                   Icons.accessibility,
@@ -250,7 +314,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.grey.shade100,
                   Colors.grey,
                   Icons.info_outline,
@@ -260,7 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.blue.shade100,
                   Colors.blue,
                   Icons.perm_device_info_outlined,
@@ -270,7 +334,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                _buildListTile(
+                buildListTile(
                   Colors.blue.shade100,
                   Colors.blue,
                   Icons.help_outline,
@@ -288,7 +352,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  ListTile _buildListTile(Color backgroundColor, Color iconColor, IconData icon,
+  ListTile buildListTile(Color backgroundColor, Color iconColor, IconData icon,
       String title, String subtitle, VoidCallback onTap) {
     return ListTile(
       leading: CircleAvatar(

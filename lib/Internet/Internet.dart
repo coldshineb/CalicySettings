@@ -127,7 +127,8 @@ class _InternetPageState extends State<InternetPage> {
                               ),
                               const Text(
                                 '详细了解专用 DNS 功能',
-                                style: TextStyle(color: Colors.grey),
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14),
                               ),
                             ],
                           ),
