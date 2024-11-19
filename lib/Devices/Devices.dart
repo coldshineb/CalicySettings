@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../Components.dart';
 import 'AllDevices.dart';
-import 'NFC/NFC.dart';
+import 'NFC.dart';
 
 class DevicePage extends StatefulWidget {
   const DevicePage({super.key});

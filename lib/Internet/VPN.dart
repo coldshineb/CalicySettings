@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../Components.dart';
+import '../Components.dart';
 
 class VPNPage extends StatefulWidget {
   const VPNPage({super.key});

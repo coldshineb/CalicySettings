@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
-import 'DataSaver/DataSaver.dart';
+import 'DataSaver.dart';
 import 'Hotspot/Hotspot.dart';
 import 'SIM/SIM.dart';
-import 'VPN/VPN.dart';
+import 'VPN.dart';
 import 'WLAN/WLAN.dart';
 
 class InternetPage extends StatefulWidget {

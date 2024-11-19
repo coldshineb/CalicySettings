@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../Components.dart';
+import '../Components.dart';
 
 class DevicesNFCPage extends StatefulWidget {
   const DevicesNFCPage({super.key});
