@@ -259,7 +259,7 @@ class _HotspotWLANHotspotPageState extends State<HotspotWLANHotspotPage>
                             onChanged: (value) {},
                           ),
                           const Text(
-                            '如果首选频率不可用，热点可能会使用其他频率。如果您更改频率，热点的安全设置可能也会改变。',
+                            '如果首选频率不可用，热点可能会使用其它频率。如果您更改频率，热点的安全设置可能也会改变。',
                             style: TextStyle(color: Colors.grey, fontSize: 14),
                           ),
                         ],

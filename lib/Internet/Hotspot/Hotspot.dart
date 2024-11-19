@@ -33,7 +33,7 @@ class _HotspotPageState extends State<HotspotPage> with Components {
           ),
           const ListTile(
             title: Text(
-              '使用热点和网络共享功能，让其他设备能通过您的无线局域网或移动数据网络连接到互联网。应用还可以通过创建热点。与附近的设备共享内容。',
+              '使用热点和网络共享功能，让其它设备能通过您的无线局域网或移动数据网络连接到互联网。应用还可以通过创建热点。与附近的设备共享内容。',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 14,
@@ -48,7 +48,7 @@ class _HotspotPageState extends State<HotspotPage> with Components {
           ),
           buildListTile(
               title: '无线局域网热点',
-              subtitle: '目前没有与其他设备共享互联网连接或内容',
+              subtitle: '目前没有与其它设备共享互联网连接或内容',
               onTap: () {
                 Navigator.push(
                     context, calicyPageRoute(HotspotWLANHotspotPage()));

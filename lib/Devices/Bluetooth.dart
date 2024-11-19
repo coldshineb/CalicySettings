@@ -164,7 +164,7 @@ class _DevicesBluetoothPageState extends State<DevicesBluetoothPage>
           ),
           const ListTile(
             title: Text(
-              '蓝牙处于开启状态时，您的设备可以与附近的其他蓝牙设备通信。快速分享、查找我的设备等功能会使用蓝牙。',
+              '蓝牙处于开启状态时，您的设备可以与附近的其它蓝牙设备通信。快速分享、查找我的设备等功能会使用蓝牙。',
               style: TextStyle(color: Colors.grey, fontSize: 14),
             ),
           )

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../Components.dart';
 import 'AllDevices.dart';
+import 'NFC/NFC.dart';
 
 class DevicePage extends StatefulWidget {
   const DevicePage({super.key});
@@ -86,7 +87,9 @@ class _DevicePageState extends State<DevicePage> with Components {
             icon: Icons.nfc,
             title: '近场通信',
             subtitle: '已开启',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, calicyPageRoute(DevicesNFCPage()));
+            },
           ),
           buildListTile(
             icon: Icons.cast,
