@@ -180,6 +180,18 @@ class _HotspotWLANHotspotPageState extends State<HotspotWLANHotspotPage>
               },
             ),
           ),
+          buildListTile(
+            title: '共享 VPN 连接',
+            onTap: () {},
+            trailing: Switch(
+              value: true,
+              onChanged: (value) {
+                setState(() {
+                  value = value;
+                });
+              },
+            ),
+          ),
           const Divider(height: 1),
           const ListTile(
             title: Text(

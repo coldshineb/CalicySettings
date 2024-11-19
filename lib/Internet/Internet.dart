@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
+import 'DataSaver/DataSaver.dart';
 import 'Hotspot/Hotspot.dart';
 import 'SIM/SIM.dart';
+import 'VPN/VPN.dart';
 import 'WLAN/WLAN.dart';
 
 class InternetPage extends StatefulWidget {
@@ -87,13 +89,19 @@ class _InternetPageState extends State<InternetPage> with Components {
             icon: Icons.data_usage,
             title: '流量节省程序',
             subtitle: '已关闭',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  calicyPageRoute(const DataSaverPage()));
+            },
           ),
           buildListTile(
-            icon: Icons.vpn_key,
+            icon: Icons.vpn_key_outlined,
             title: 'VPN',
             subtitle: '未连接',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  calicyPageRoute(const VPNPage()));
+            },
           ),
           buildListTile(
             title: '专用 DNS',
@@ -173,6 +181,10 @@ class _InternetPageState extends State<InternetPage> with Components {
                         ],
                       ));
             },
+          ),
+          buildListTile(
+            title: '流量使用情况',
+            onTap: () {},
           ),
           buildListTile(
             title: '自适应连接',
