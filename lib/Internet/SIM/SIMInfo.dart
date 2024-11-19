@@ -76,7 +76,7 @@ class _SIMSIMInfoPageState extends State<SIMSIMInfoPage> with Components {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: const Text('保存'),
+                          child: const Text('确定'),
                         ),
                       ],
                     );
@@ -162,7 +162,7 @@ class _SIMSIMInfoPageState extends State<SIMSIMInfoPage> with Components {
                 context: context,
                 builder: (context) {
                   return AlertDialog.adaptive(
-                    title: const Text('选择漫游时允许的数据网络'),
+                    title: const Text('漫游联网限制'),
                     content: SingleChildScrollView(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -292,7 +292,7 @@ class _SIMSIMInfoPageState extends State<SIMSIMInfoPage> with Components {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: const Text('保存'),
+                        child: const Text('确定'),
                       ),
                     ],
                   );
@@ -340,7 +340,7 @@ class _SIMSIMInfoPageState extends State<SIMSIMInfoPage> with Components {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: const Text('保存'),
+                        child: const Text('确定'),
                       ),
                     ],
                   );
@@ -417,7 +417,7 @@ class _SIMSIMInfoPageState extends State<SIMSIMInfoPage> with Components {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: const Text('保存'),
+                          child: const Text('确定'),
                         ),
                       ],
                     );
@@ -468,7 +468,7 @@ class _SIMSIMInfoPageState extends State<SIMSIMInfoPage> with Components {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: const Text('移除'),
+                        child: const Text('清空'),
                       ),
                     ],
                   );

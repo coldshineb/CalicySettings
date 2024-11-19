@@ -27,7 +27,7 @@ class _WLANNetworkPreferencesPageState
       ),
       body: ListView(
         children: [
-          ListTile(
+          const ListTile(
             title: Text(
               '网络加速',
               style: TextStyle(
@@ -52,14 +52,14 @@ class _WLANNetworkPreferencesPageState
           ),
           _buildInternetListTile(
             title: '移动网络加速',
-            subtitle: '无线局域网网络质量不佳时，同时使用移动移动网络进行加速',
+            subtitle: '无线局域网网络质量不佳时，同时使用移动网络进行加速',
             trailing: Switch(
               value: true,
               onChanged: (value) {},
             ),
             onTap: () {},
           ),
-          Divider(height: 1),
+          const Divider(height: 1),
           _buildInternetListTile(
             icon: Icons.home_rounded,
             title: '自动开启无线局域网',
@@ -80,7 +80,7 @@ class _WLANNetworkPreferencesPageState
             ),
             onTap: () {},
           ),
-          Divider(height: 1),
+          const Divider(height: 1),
           _buildInternetListTile(
             title: '允许连接 WEP 网络',
             subtitle: 'WEP 是较旧的安全协议，其安全性较低',

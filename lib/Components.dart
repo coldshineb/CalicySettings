@@ -24,4 +24,33 @@ mixin class Components {
       onTap: onTap,
     );
   }
+
+  PageRoute calicyPageRoute(Widget page) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        // 定义从下到上的平移动画
+        const begin = Offset(0.0, 0.05);
+        const end = Offset(0.0, 0.0);
+        const curve = Curves.easeInOut;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var offsetAnimation = animation.drive(tween);
+
+        // 定义淡入淡出的透明度动画
+        var fadeAnimation = Tween<double>(begin: 0.0, end: 1.0)
+            .chain(CurveTween(curve: curve))
+            .animate(animation);
+
+        return FadeTransition(
+          opacity: fadeAnimation,
+          child: SlideTransition(
+            position: offsetAnimation,
+            child: child,
+          ),
+        );
+      },
+    );
+  }
 }

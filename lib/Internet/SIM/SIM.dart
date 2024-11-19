@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../Components.dart';
@@ -33,9 +32,9 @@ class _SIMPageState extends State<SIMPage> with Components {
             title: 'Calicy 移动',
             onTap: () {
               Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                      builder: (context) => const SIMSIMInfoPage()));
+                context,
+                calicyPageRoute(const SIMSIMInfoPage()),
+              );
             },
             trailing: Row(
               mainAxisSize: MainAxisSize.min,

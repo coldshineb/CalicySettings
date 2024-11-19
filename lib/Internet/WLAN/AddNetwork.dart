@@ -25,6 +25,15 @@ class _WLANAddNetworkPageState extends State<WLANAddNetworkPage>
             Navigator.pop(context);
           },
         ),
+        actions: [
+          Tooltip(
+            message: '保存',
+            child: IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: () {},
+            ),
+          )
+        ],
       ),
       body: ListView(
         children: [

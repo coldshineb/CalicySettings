@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
@@ -39,7 +38,7 @@ class _InternetPageState extends State<InternetPage> with Components {
               subtitle: '已连接到 Calicy_Public',
               onTap: () {
                 Navigator.push(context,
-                    CupertinoPageRoute(builder: (context) => const WLANPage()));
+                    calicyPageRoute(const WLANPage()));
               },
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -63,7 +62,7 @@ class _InternetPageState extends State<InternetPage> with Components {
             subtitle: 'Calicy 移动',
             onTap: () {
               Navigator.push(context,
-                  CupertinoPageRoute(builder: (context) => const SIMPage()));
+                  calicyPageRoute(const SIMPage()));
             },
           ),
           buildListTile(
@@ -81,8 +80,7 @@ class _InternetPageState extends State<InternetPage> with Components {
             subtitle: '已关闭',
             onTap: () {
               Navigator.push(context,
-                  CupertinoPageRoute(builder: (context) => const HotspotPage()));
-
+                  calicyPageRoute(const HotspotPage()));
             },
           ),
           buildListTile(
@@ -170,7 +168,7 @@ class _InternetPageState extends State<InternetPage> with Components {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            child: const Text('保存'),
+                            child: const Text('确定'),
                           ),
                         ],
                       ));

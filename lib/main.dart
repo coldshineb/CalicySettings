@@ -1,10 +1,9 @@
-import 'dart:ui';
-
-import 'package:calicy_settings/Display/Display.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:calicy_settings/Internet/Internet.dart';
 import 'package:flutter/material.dart';
 
-import 'Internet/Internet.dart';
+import 'Components.dart';
+import 'Display/Display.dart';
+import 'Internet/WLAN/WLAN.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -140,7 +138,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with Components {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,20 +164,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.blue.shade100,
                   Colors.blue,
                   Icons.wifi,
                   '网络和互联网',
                   '无线局域网、移动网络、数据使用量和热点',
                   () {
-                    Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (context) => const InternetPage()));
+                    Navigator.push(context, calicyPageRoute(const InternetPage()));
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.green.shade100,
                   Colors.green,
                   Icons.devices,
@@ -189,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.orange.shade100,
                   Colors.orange,
                   Icons.apps,
@@ -199,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.cyan.shade100,
                   Colors.cyan,
                   Icons.battery_full,
@@ -209,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.purple.shade100,
                   Colors.purple,
                   Icons.home,
@@ -220,21 +215,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
                 //display
-                buildListTile(
+                buildMainListTile(
                   Colors.orange.shade100,
                   Colors.orange[600]!,
                   Icons.brightness_6_outlined,
                   '显示和触控',
                   '亮度、深色主题、自动旋转、字体大小',
                   () {
-                    //nav to display settings
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => DisplayPage()),
-                    );
+                    Navigator.push(context, calicyPageRoute(const DisplayPage()));
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.green.shade100,
                   Colors.green[300]!,
                   Icons.volume_up_outlined,
@@ -244,7 +235,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.purple.shade100,
                   Colors.purple,
                   Icons.storage,
@@ -254,7 +245,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.blue.shade100,
                   Colors.blue[300]!,
                   Icons.remove_red_eye_outlined,
@@ -264,7 +255,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.cyan.shade100,
                   Colors.cyan,
                   Icons.location_on_outlined,
@@ -274,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.green.shade100,
                   Colors.green,
                   Icons.lock_outline,
@@ -284,7 +275,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.orange.shade100,
                   Colors.orange[600]!,
                   Icons.account_circle_outlined,
@@ -294,7 +285,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.orange.shade100,
                   Colors.orange[600]!,
                   Icons.accessibility,
@@ -304,7 +295,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.green.shade100,
                   Colors.green[600]!,
                   Icons.accessibility,
@@ -314,7 +305,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.grey.shade100,
                   Colors.grey,
                   Icons.info_outline,
@@ -324,7 +315,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.blue.shade100,
                   Colors.blue,
                   Icons.perm_device_info_outlined,
@@ -334,7 +325,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     //navigate to general settings
                   },
                 ),
-                buildListTile(
+                buildMainListTile(
                   Colors.blue.shade100,
                   Colors.blue,
                   Icons.help_outline,
@@ -352,8 +343,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  ListTile buildListTile(Color backgroundColor, Color iconColor, IconData icon,
-      String title, String subtitle, VoidCallback onTap) {
+  ListTile buildMainListTile(Color backgroundColor, Color iconColor,
+      IconData icon, String title, String subtitle, VoidCallback onTap) {
     return ListTile(
       leading: CircleAvatar(
         backgroundColor: backgroundColor,

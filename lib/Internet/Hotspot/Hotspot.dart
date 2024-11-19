@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../Components.dart';
+import 'WLANHotspot.dart';
 
 class HotspotPage extends StatefulWidget {
   const HotspotPage({super.key});
@@ -48,7 +49,10 @@ class _HotspotPageState extends State<HotspotPage> with Components {
           buildListTile(
               title: '无线局域网热点',
               subtitle: '目前没有与其他设备共享互联网连接或内容',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, calicyPageRoute(HotspotWLANHotspotPage()));
+              },
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -77,9 +81,7 @@ class _HotspotPageState extends State<HotspotPage> with Components {
             onTap: () {},
             trailing: Switch(
               value: false,
-              onChanged: (
-                value,
-              ) {},
+              onChanged: (value,) {},
             ),
           ),
           buildListTile(

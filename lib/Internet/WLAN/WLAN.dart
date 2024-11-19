@@ -143,10 +143,7 @@ class _WLANPageState extends State<WLANPage> with Components {
               title: '添加网络',
               icon: Icons.add,
               onTap: () {
-                Navigator.push(
-                    context,
-                    CupertinoPageRoute(
-                        builder: (context) => const WLANAddNetworkPage()));
+                Navigator.push(context, calicyPageRoute(WLANAddNetworkPage()));
               }),
           const Divider(height: 1),
           const ListTile(
@@ -163,20 +160,14 @@ class _WLANPageState extends State<WLANPage> with Components {
             subtitle: '网络加速、自动重新开启无线局域网、安装证书',
             onTap: () {
               Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                      builder: (context) =>
-                          const WLANNetworkPreferencesPage()));
+                  context, calicyPageRoute(WLANNetworkPreferencesPage()));
             },
           ),
           buildListTile(
             title: '已保存的网络',
             subtitle: '2 个网络',
             onTap: () {
-              Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                      builder: (context) => const WLANSavedNetworkPage()));
+              Navigator.push(context, calicyPageRoute(WLANSavedNetworkPage()));
             },
           ),
         ],
