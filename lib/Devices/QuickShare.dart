@@ -50,14 +50,16 @@ class _DevicesQuickSharePageState extends State<DevicesQuickSharePage>
                 builder: (context) {
                   return AlertDialog.adaptive(
                     title: const Text('设备名称'),
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        TextField(
-                          controller:
-                              TextEditingController(text: 'Calicy Demo'),
-                        ),
-                      ],
+                    content: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          TextField(
+                            controller:
+                                TextEditingController(text: 'Calicy Demo'),
+                          ),
+                        ],
+                      ),
                     ),
                     buttonPadding: const EdgeInsets.all(16),
                     actions: [
@@ -88,39 +90,41 @@ class _DevicesQuickSharePageState extends State<DevicesQuickSharePage>
                 builder: (context) {
                   return AlertDialog.adaptive(
                     title: const Text('设备公开范围'),
-                    content: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        RadioListTile(
-                            value: 0,
+                    content: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          RadioListTile(
+                              value: 0,
+                              groupValue: 0,
+                              onChanged: (value) {},
+                              title: const Text('所有人')),
+                          CheckboxListTile(
+                              controlAffinity: ListTileControlAffinity.leading,
+                              value: false,
+                              onChanged: (value) {},
+                              title: const Text('限时 10 分钟')),
+                          RadioListTile(
+                            value: 1,
                             groupValue: 0,
                             onChanged: (value) {},
-                            title: const Text('所有人')),
-                        CheckboxListTile(
-                            controlAffinity: ListTileControlAffinity.leading,
-                            value: false,
+                            title: const Text('联系人'),
+                          ),
+                          RadioListTile(
+                            value: 2,
+                            groupValue: 0,
                             onChanged: (value) {},
-                            title: const Text('限时 10 分钟')),
-                        RadioListTile(
-                          value: 1,
-                          groupValue: 0,
-                          onChanged: (value) {},
-                          title: const Text('联系人'),
-                        ),
-                        RadioListTile(
-                          value: 2,
-                          groupValue: 0,
-                          onChanged: (value) {},
-                          title: const Text('您的设备'),
-                        ),
-                        RadioListTile(
-                          value: 3,
-                          groupValue: 0,
-                          onChanged: (value) {},
-                          title: const Text('不公开'),
-                        ),
-                      ],
+                            title: const Text('您的设备'),
+                          ),
+                          RadioListTile(
+                            value: 3,
+                            groupValue: 0,
+                            onChanged: (value) {},
+                            title: const Text('不公开'),
+                          ),
+                        ],
+                      ),
                     ),
                     buttonPadding: const EdgeInsets.all(16),
                     actions: [

@@ -94,28 +94,30 @@ class _NotificationPageState extends State<NotificationPage> with Components {
                 builder: (context) {
                   return AlertDialog(
                     title: const Text('锁屏通知'),
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        RadioListTile(
-                          value: 0,
-                          groupValue: 1,
-                          onChanged: (value) {},
-                          title: const Text('显示全部内容'),
-                        ),
-                        RadioListTile(
-                          value: 1,
-                          groupValue: 1,
-                          onChanged: (value) {},
-                          title: const Text('隐藏敏感内容'),
-                        ),
-                        RadioListTile(
-                          value: 2,
-                          groupValue: 1,
-                          onChanged: (value) {},
-                          title: const Text('不显示通知'),
-                        ),
-                      ],
+                    content: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          RadioListTile(
+                            value: 0,
+                            groupValue: 1,
+                            onChanged: (value) {},
+                            title: const Text('显示全部内容'),
+                          ),
+                          RadioListTile(
+                            value: 1,
+                            groupValue: 1,
+                            onChanged: (value) {},
+                            title: const Text('隐藏敏感内容'),
+                          ),
+                          RadioListTile(
+                            value: 2,
+                            groupValue: 1,
+                            onChanged: (value) {},
+                            title: const Text('不显示通知'),
+                          ),
+                        ],
+                      ),
                     ),
                     buttonPadding: const EdgeInsets.all(16),
                     actions: [
