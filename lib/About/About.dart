@@ -1,8 +1,10 @@
 import 'package:calicy_settings/Apps/AppsInfo.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 import '../Components.dart';
 import 'Hardware.dart';
+
 class AboutPage extends StatefulWidget {
   const AboutPage({super.key});
 
@@ -72,16 +74,14 @@ class _AboutPageState extends State<AboutPage> with Components {
           buildListTile(
             title: '电话号码（SIM 卡插槽 1）',
             subtitle: '未知',
-            onTap: () {
-            },
+            onTap: () {},
           ),
           buildListTile(
             title: '电话号码（SIM 卡插槽 2）',
             subtitle: '无 SIM 卡',
-            onTap: () {
-            },
+            onTap: () {},
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           const ListTile(
@@ -95,8 +95,7 @@ class _AboutPageState extends State<AboutPage> with Components {
           ),
           buildListTile(
             title: '法律信息',
-            onTap: () {
-            },
+            onTap: () {},
           ),
           buildListTile(
             title: '监管标签',
@@ -135,40 +134,224 @@ class _AboutPageState extends State<AboutPage> with Components {
           buildListTile(
             title: '型号',
             subtitle: 'Calicy Demo',
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('型号'),
+                    content: const SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('型号'),
+                          Text('Calicy Demo',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                          SizedBox(height: 16),
+                          Text('序列号'),
+                          Text('839417294AVDAH124',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                          SizedBox(height: 16),
+                          Text('硬件版本'),
+                          Text('MP1.0',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                          SizedBox(height: 16),
+                          Text('制造年份'),
+                          Text('2024',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                        ],
+                      ),
+                    ),
+                    buttonPadding: const EdgeInsets.all(16),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('确定'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
           ),
           buildListTile(
             title: 'EID',
             subtitle: '89000000000000000000000000000000',
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('EID'),
+                    content: SizedBox(
+                      width: 100,
+                      child: QrImageView(
+                        data: '89000000000000000000000000000000',
+                        backgroundColor: Colors.white,
+                      ),
+                    ),
+                    buttonPadding: const EdgeInsets.all(16),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('确定'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
           ),
           buildListTile(
             title: 'IMEI（SIM 卡插槽 1）',
             subtitle: '356789123456789',
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('IMEI（SIM 卡插槽 1）'),
+                    content: const SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('IMEI'),
+                          Text('356789123456789',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                          SizedBox(height: 16),
+                          Text('IMEI SV'),
+                          Text('64',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                        ],
+                      ),
+                    ),
+                    buttonPadding: const EdgeInsets.all(16),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('确定'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
           ),
           buildListTile(
             title: 'IMEI（SIM 卡插槽 2）',
             subtitle: '356789123456782',
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('IMEI（SIM 卡插槽 2）'),
+                    content: const SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('IMEI'),
+                          Text('356789123456782',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                          SizedBox(height: 16),
+                          Text('IMEI SV'),
+                          Text('64',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                        ],
+                      ),
+                    ),
+                    buttonPadding: const EdgeInsets.all(16),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('确定'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
           ),
           buildListTile(
             title: 'Calicy 版本',
             subtitle: '170',
             onTap: () {
-
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('版本信息'),
+                    content: const SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Calicy 版本'),
+                          Text('170',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                          SizedBox(height: 16),
+                          Text('补丁版本'),
+                          Text('2024-11-01',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                          SizedBox(height: 16),
+                          Text('基带版本'),
+                          Text(
+                              'g5300q-240704-240912-B-12358532,g5300q-240704-240912-B-12358532',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                          SizedBox(height: 16),
+                          Text('构建号'),
+                          Text('200000',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey)),
+                        ],
+                      ),
+                    ),
+                    buttonPadding: const EdgeInsets.all(16),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('确定'),
+                      ),
+                    ],
+                  );
+                },
+              );
             },
           ),
           buildListTile(
             title: '硬件信息',
             onTap: () {
               Navigator.push(
-                context,calicyPageRoute(
-                  const AboutHardwarePage()),
+                context,
+                calicyPageRoute(const AboutHardwarePage()),
               );
             },
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           const ListTile(

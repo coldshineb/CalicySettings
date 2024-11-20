@@ -106,8 +106,8 @@ class _DevicePageState extends State<DevicePage> with Components {
           ),
           buildListTile(
             icon: Icons.phonelink,
-            title: '连接到 Calicy 桌面设备',
-            subtitle: '未连接',
+            title: '互通协作',
+            subtitle: '与其它 Calicy 设备协作',
             onTap: () {},
           ),
           buildListTile(

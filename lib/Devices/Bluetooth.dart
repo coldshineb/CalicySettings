@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
+import 'Bluetooth/BluetoothPreferences.dart';
 
 class DevicesBluetoothPage extends StatefulWidget {
   const DevicesBluetoothPage({super.key});
@@ -79,85 +80,16 @@ class _DevicesBluetoothPageState extends State<DevicesBluetoothPage>
             onTap: () {},
           ),
           const Divider(height: 1),
-          const ListTile(
-            title: Text(
-              '连接设置',
-              style: TextStyle(color: Colors.grey, fontSize: 12),
-            ),
-          ),
           buildListTile(
-            title: '明天自动开启',
-            subtitle: '关闭蓝牙后将于明天重新打开，便于重新连接已配对设备',
-            onTap: () {},
-            trailing: Switch(
-              value: true,
-              onChanged: (value) {
-                setState(() {
-                  value = value;
-                });
-              },
-            ),
-          ),
-          buildListTile(
-            title: '快速连接',
-            subtitle: '快速连接耳机、音箱等支持快连协议的蓝牙设备',
-            onTap: () {},
-            trailing: Switch(
-              value: true,
-              onChanged: (value) {
-                setState(() {
-                  value = value;
-                });
-              },
-            ),
-          ),
-          buildListTile(
-            title: '来电铃声同时播放',
-            subtitle: '来电时允许蓝牙设备同步播放手机预设铃声',
-            onTap: () {},
-            trailing: Switch(
-              value: true,
-              onChanged: (value) {
-                setState(() {
-                  value = value;
-                });
-              },
-            ),
-          ),
-          buildListTile(
-            title: '设备黑名单',
-            onTap: () {},
-          ),
-          const Divider(height: 1),
-          const ListTile(
-            title: Text(
-              '显示设置',
-              style: TextStyle(color: Colors.grey, fontSize: 12),
-            ),
-          ),
-          buildListTile(
-            title: '显示无名称设备',
-            onTap: () {},
-            trailing: Switch(
-              value: false,
-              onChanged: (value) {
-                setState(() {
-                  value = value;
-                });
-              },
-            ),
-          ),
-          buildListTile(
-            title: '状态栏始终显示蓝牙图标',
-            onTap: () {},
-            trailing: Switch(
-              value: false,
-              onChanged: (value) {
-                setState(() {
-                  value = value;
-                });
-              },
-            ),
+            title: '蓝牙偏好设置',
+            subtitle: '明天自动开启、设备黑名单、显示无名称设备',
+            onTap: () {
+              Navigator.push(
+                context,
+                calicyPageRoute(
+                    const DevicesBluetoothBluetoothPreferencesPage()),
+              );
+            },
           ),
           const ListTile(
             leading: Icon(Icons.info_outline),
