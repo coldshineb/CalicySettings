@@ -1,3 +1,4 @@
+import 'package:calicy_settings/Battery/Battery.dart';
 import 'package:calicy_settings/Internet/Internet.dart';
 import 'package:calicy_settings/Notification/Notification.dart';
 import 'package:flutter/material.dart';
@@ -127,7 +128,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           useMaterial3: false),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -217,7 +218,7 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '电池',
                   '省电模式、电池使用情况',
                   () {
-                    //navigate to general settings
+                    Navigator.push(context, calicyPageRoute(const BatteryPage()));
                   },
                 ),
                 buildMainListTile(
