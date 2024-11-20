@@ -21,7 +21,7 @@ class _DevicesDevicesInfoPageState extends State<DevicesDevicesInfoPage>
       appBar: AppBar(
           title: Text(
             title,
-            style: TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 18),
           ),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
@@ -46,32 +46,32 @@ class _DevicesDevicesInfoPageState extends State<DevicesDevicesInfoPage>
               Column(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.noise_control_off),
+                    icon: const Icon(Icons.noise_control_off),
                     onPressed: () {},
                   ),
-                  Text('通透', style: TextStyle(fontSize: 12)),
-                  SizedBox(height: 10),
+                  const Text('通透', style: TextStyle(fontSize: 12)),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.noise_aware, color: Colors.blue),
+                    icon: const Icon(Icons.noise_aware, color: Colors.blue),
                     onPressed: () {},
                   ),
-                  Text('降噪',
+                  const Text('降噪',
                       style: TextStyle(fontSize: 12, color: Colors.blue)),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.noise_control_off),
+                    icon: const Icon(Icons.noise_control_off),
                     onPressed: () {},
                   ),
-                  Text('关闭', style: TextStyle(fontSize: 12)),
-                  SizedBox(height: 10),
+                  const Text('关闭', style: TextStyle(fontSize: 12)),
+                  const SizedBox(height: 10),
                 ],
               ),
             ],
@@ -85,23 +85,23 @@ class _DevicesDevicesInfoPageState extends State<DevicesDevicesInfoPage>
                 context: context,
                 builder: (context) {
                   return AlertDialog(
-                    title: Text('重命名'),
+                    title: const Text('重命名'),
                     content: TextField(
                       controller: TextEditingController(text: title),
                     ),
-                    buttonPadding: EdgeInsets.all(16),
+                    buttonPadding: const EdgeInsets.all(16),
                     actions: [
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text('取消'),
+                        child: const Text('取消'),
                       ),
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text('确定'),
+                        child: const Text('确定'),
                       ),
                     ],
                   );
@@ -114,7 +114,7 @@ class _DevicesDevicesInfoPageState extends State<DevicesDevicesInfoPage>
             title: '检查更新',
             onTap: () {},
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           const ListTile(
@@ -153,7 +153,7 @@ class _DevicesDevicesInfoPageState extends State<DevicesDevicesInfoPage>
               onChanged: (value) {},
             ),
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           const ListTile(
@@ -201,7 +201,7 @@ class _DevicesDevicesInfoPageState extends State<DevicesDevicesInfoPage>
               },
             ),
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           const ListTile(
@@ -235,7 +235,7 @@ class _DevicesDevicesInfoPageState extends State<DevicesDevicesInfoPage>
               },
             ),
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           buildListTile(
@@ -256,7 +256,7 @@ class _DevicesDevicesInfoPageState extends State<DevicesDevicesInfoPage>
               },
             ),
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           buildListTile(

@@ -78,7 +78,7 @@ class _DevicesBluetoothPageState extends State<DevicesBluetoothPage>
             title: '与新设备配对',
             onTap: () {},
           ),
-          Divider(height: 1),
+          const Divider(height: 1),
           const ListTile(
             title: Text(
               '连接设置',
@@ -128,7 +128,7 @@ class _DevicesBluetoothPageState extends State<DevicesBluetoothPage>
             title: '设备黑名单',
             onTap: () {},
           ),
-          Divider(height: 1),
+          const Divider(height: 1),
           const ListTile(
             title: Text(
               '显示设置',

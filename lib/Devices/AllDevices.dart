@@ -15,7 +15,7 @@ class _DevicesAllDevicesPageState extends State<DevicesAllDevicesPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
+          title: const Text(
             '保存的设备',
             style: TextStyle(fontSize: 18),
           ),
@@ -35,21 +35,21 @@ class _DevicesAllDevicesPageState extends State<DevicesAllDevicesPage>
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog.adaptive(
-                      title: Text('删除设备'),
-                      content: Text('要删除此设备吗？'),
-                      buttonPadding: EdgeInsets.all(16),
+                      title: const Text('删除设备'),
+                      content: const Text('要删除此设备吗？'),
+                      buttonPadding: const EdgeInsets.all(16),
                       actions: [
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('取消'),
+                          child: const Text('取消'),
                         ),
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('删除'),
+                          child: const Text('删除'),
                         ),
                       ],
                     );
@@ -64,21 +64,21 @@ class _DevicesAllDevicesPageState extends State<DevicesAllDevicesPage>
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog.adaptive(
-                      title: Text('删除设备'),
-                      content: Text('要删除此设备吗？'),
-                      buttonPadding: EdgeInsets.all(16),
+                      title: const Text('删除设备'),
+                      content: const Text('要删除此设备吗？'),
+                      buttonPadding: const EdgeInsets.all(16),
                       actions: [
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('取消'),
+                          child: const Text('取消'),
                         ),
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('删除'),
+                          child: const Text('删除'),
                         ),
                       ],
                     );
@@ -93,21 +93,21 @@ class _DevicesAllDevicesPageState extends State<DevicesAllDevicesPage>
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog.adaptive(
-                      title: Text('删除设备'),
-                      content: Text('要删除此设备吗？'),
-                      buttonPadding: EdgeInsets.all(16),
+                      title: const Text('删除设备'),
+                      content: const Text('要删除此设备吗？'),
+                      buttonPadding: const EdgeInsets.all(16),
                       actions: [
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('取消'),
+                          child: const Text('取消'),
                         ),
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('删除'),
+                          child: const Text('删除'),
                         ),
                       ],
                     );

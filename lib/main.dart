@@ -1,4 +1,5 @@
 import 'package:calicy_settings/Internet/Internet.dart';
+import 'package:calicy_settings/Notification/Notification.dart';
 import 'package:flutter/material.dart';
 
 import 'Apps/Apps.dart';
@@ -205,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '通知',
                   '历史通知、对话泡',
                   () {
-                    Navigator.push(context, calicyPageRoute(const AppsPage()));
+                    Navigator.push(context, calicyPageRoute(const NotificationPage()));
                   },
                 ),
                 buildMainListTile(

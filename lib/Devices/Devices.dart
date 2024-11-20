@@ -33,7 +33,7 @@ class _DevicePageState extends State<DevicePage> with Components {
       body: ListView(
         children: [
           buildListTile(icon: Icons.add, title: '与新设备配对', onTap: () {}),
-          Divider(
+          const Divider(
             height: 1,
           ),
           const ListTile(
@@ -53,7 +53,7 @@ class _DevicePageState extends State<DevicePage> with Components {
               Navigator.push(
                   context,
                   calicyPageRoute(
-                      DevicesDevicesInfoPage(title: "Calicy Earbuds 2")));
+                      const DevicesDevicesInfoPage(title: "Calicy Earbuds 2")));
             },
           ),
           buildListTile(
@@ -64,24 +64,24 @@ class _DevicePageState extends State<DevicePage> with Components {
               Navigator.push(
                   context,
                   calicyPageRoute(
-                      DevicesDevicesInfoPage(title: "Calicy Earbuds")));
+                      const DevicesDevicesInfoPage(title: "Calicy Earbuds")));
             },
           ),
           buildListTile(
             icon: Icons.arrow_forward,
             title: '查看全部',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(DevicesAllDevicesPage()));
+              Navigator.push(context, calicyPageRoute(const DevicesAllDevicesPage()));
             },
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           buildListTile(
             icon: Icons.bluetooth,
             title: '蓝牙',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(DevicesBluetoothPage()));
+              Navigator.push(context, calicyPageRoute(const DevicesBluetoothPage()));
             },
           ),
           buildListTile(
@@ -89,7 +89,7 @@ class _DevicePageState extends State<DevicePage> with Components {
             title: '近场通信',
             subtitle: '已开启',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(DevicesNFCPage()));
+              Navigator.push(context, calicyPageRoute(const DevicesNFCPage()));
             },
           ),
           buildListTile(
@@ -116,7 +116,7 @@ class _DevicePageState extends State<DevicePage> with Components {
             subtitle: '与附近的设备分享文件',
             onTap: () {
               Navigator.push(
-                  context, calicyPageRoute(DevicesQuickSharePage()));
+                  context, calicyPageRoute(const DevicesQuickSharePage()));
             },
           ),
           buildListTile(

@@ -17,9 +17,9 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
+          title: const Text(
             '应用信息',
-            style: const TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 18),
           ),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
@@ -29,7 +29,7 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
           )),
       body: ListView(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Center(
@@ -42,15 +42,15 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
                 ), // Replace with your desired icon
                 Text(
                   widget.title,
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           Row(
@@ -59,50 +59,50 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
               Column(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.cloud_upload_outlined),
+                    icon: const Icon(Icons.cloud_upload_outlined),
                     onPressed: () {},
                   ),
-                  Text('归档', style: TextStyle(fontSize: 12)),
-                  SizedBox(height: 10),
+                  const Text('归档', style: TextStyle(fontSize: 12)),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.disabled_visible_outlined),
+                    icon: const Icon(Icons.disabled_visible_outlined),
                     onPressed: () {},
                   ),
-                  Text('停用', style: TextStyle(fontSize: 12)),
-                  SizedBox(height: 10),
+                  const Text('停用', style: TextStyle(fontSize: 12)),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.stop_circle_outlined),
+                    icon: const Icon(Icons.stop_circle_outlined),
                     onPressed: () {},
                   ),
-                  Text('强行停止', style: TextStyle(fontSize: 12)),
-                  SizedBox(height: 10),
+                  const Text('强行停止', style: TextStyle(fontSize: 12)),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.open_in_new_outlined),
+                    icon: const Icon(Icons.open_in_new_outlined),
                     onPressed: () {},
                   ),
-                  Text('打开', style: TextStyle(fontSize: 12)),
-                  SizedBox(height: 10),
+                  const Text('打开', style: TextStyle(fontSize: 12)),
+                  const SizedBox(height: 10),
                 ],
               ),
             ],
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
-          ListTile(
-            title: const Text(
+          const ListTile(
+            title: Text(
               '使用量',
               style: TextStyle(
                 color: Colors.grey,
@@ -125,11 +125,11 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
             subtitle: '今天使用了30分钟',
             onTap: () {},
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
-          ListTile(
-            title: const Text(
+          const ListTile(
+            title: Text(
               '常规',
               style: TextStyle(
                 color: Colors.grey,
@@ -162,11 +162,11 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
             subtitle: '无限制',
             onTap: () {},
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
-          ListTile(
-            title: const Text(
+          const ListTile(
+            title: Text(
               '高级',
               style: TextStyle(
                 color: Colors.grey,
@@ -187,11 +187,11 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
             ),
             onTap: () {},
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
-          ListTile(
-            title: const Text(
+          const ListTile(
+            title: Text(
               '更多信息',
               style: TextStyle(
                 color: Colors.grey,

@@ -44,7 +44,7 @@ class _AppsPageState extends State<AppsPage> with Components {
             title: '文件',
             subtitle: '5 分钟前',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(AppsAppsInfoPage(title: '文件', icon: Icons.file_download)));
+              Navigator.push(context, calicyPageRoute(const AppsAppsInfoPage(title: '文件', icon: Icons.file_download)));
             },
           ),
           buildListTile(
@@ -52,7 +52,7 @@ class _AppsPageState extends State<AppsPage> with Components {
             title: '音乐',
             subtitle: '5 分钟前',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(AppsAppsInfoPage(title: '音乐', icon: Icons.music_note_outlined)));
+              Navigator.push(context, calicyPageRoute(const AppsAppsInfoPage(title: '音乐', icon: Icons.music_note_outlined)));
             },
           ),
           buildListTile(
@@ -60,7 +60,7 @@ class _AppsPageState extends State<AppsPage> with Components {
             title: '相册',
             subtitle: '15 分钟前',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(AppsAppsInfoPage(title: '相册', icon: Icons.photo_outlined)));
+              Navigator.push(context, calicyPageRoute(const AppsAppsInfoPage(title: '相册', icon: Icons.photo_outlined)));
             },
           ),
           buildListTile(
@@ -68,7 +68,7 @@ class _AppsPageState extends State<AppsPage> with Components {
             title: '相机',
             subtitle: '20 分钟前',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(AppsAppsInfoPage(title: '相机', icon: Icons.camera_alt_outlined)));
+              Navigator.push(context, calicyPageRoute(const AppsAppsInfoPage(title: '相机', icon: Icons.camera_alt_outlined)));
             },
           ),
           buildListTile(
@@ -76,7 +76,7 @@ class _AppsPageState extends State<AppsPage> with Components {
             title: '查看所有 10 个应用',
             onTap: () {},
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           const ListTile(
@@ -120,7 +120,7 @@ class _AppsPageState extends State<AppsPage> with Components {
             subtitle: '今天使用了1小时30分钟',
             onTap: () {},
           ),
-          Divider(
+          const Divider(
             height: 1,
           ),
           const ListTile(
@@ -139,7 +139,7 @@ class _AppsPageState extends State<AppsPage> with Components {
           buildListTile(
             title: '特殊应用权限',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(AppsSpecialAppsPermsPage()));
+              Navigator.push(context, calicyPageRoute(const AppsSpecialAppsPermsPage()));
             },
           ),
         ],

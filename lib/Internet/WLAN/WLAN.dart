@@ -63,11 +63,11 @@ class _WLANPageState extends State<WLANPage> with Components {
                         ),
                         onTap: () {},
                       ),
-                      Positioned(
+                      const Positioned(
                         bottom: 0,
                         left: 0,
                         right: 0,
-                        child: const LinearProgressIndicator(
+                        child: LinearProgressIndicator(
                           minHeight: 4,
                         ),
                       ),
@@ -148,12 +148,12 @@ class _WLANPageState extends State<WLANPage> with Components {
             title: '添加网络',
             icon: Icons.add,
             onTap: () {
-              Navigator.push(context, calicyPageRoute(WLANAddNetworkPage()));
+              Navigator.push(context, calicyPageRoute(const WLANAddNetworkPage()));
             },
-            trailing: Row(
+            trailing: const Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const VerticalDivider(
+                VerticalDivider(
                   thickness: 1,
                 ),
                 SizedBox(
@@ -178,14 +178,14 @@ class _WLANPageState extends State<WLANPage> with Components {
             subtitle: '网络加速、自动重新开启无线局域网、安装证书',
             onTap: () {
               Navigator.push(
-                  context, calicyPageRoute(WLANNetworkPreferencesPage()));
+                  context, calicyPageRoute(const WLANNetworkPreferencesPage()));
             },
           ),
           buildListTile(
             title: '已保存的网络',
             subtitle: '2 个网络',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(WLANSavedNetworkPage()));
+              Navigator.push(context, calicyPageRoute(const WLANSavedNetworkPage()));
             },
           ),
         ],
