@@ -39,7 +39,7 @@ class _NotificationPageState extends State<NotificationPage> with Components {
           ),
           buildListTile(
             title: '应用通知',
-            subtitle: '控制来自各个应用的通知',
+            subtitle: '锁屏通知、悬浮通知、桌面角标',
             onTap: () {},
           ),
           buildListTile(

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "world.calicy.calicysettings.calicy_settings"
+    namespace = "world.calicy.calicysettings"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 

@@ -2,6 +2,7 @@ import 'package:calicy_settings/Internet/Internet.dart';
 import 'package:calicy_settings/Notification/Notification.dart';
 import 'package:flutter/material.dart';
 
+import 'About/About.dart';
 import 'Apps/Apps.dart';
 import 'Components.dart';
 import 'Devices/Devices.dart';
@@ -338,7 +339,8 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '关于本机',
                   '型号、Calicy 版本和状态',
                   () {
-                    //navigate to general settings
+                    Navigator.push(
+                        context, calicyPageRoute(const AboutPage()));
                   },
                 ),
                 buildMainListTile(

@@ -37,7 +37,7 @@ class _InternetPageState extends State<InternetPage> with Components {
           buildListTile(
               icon: Icons.signal_wifi_4_bar,
               title: '无线局域网',
-              subtitle: '已连接到 Calicy_Public',
+              subtitle: '已连接到 Calicy Public',
               onTap: () {
                 Navigator.push(context, calicyPageRoute(const WLANPage()));
               },

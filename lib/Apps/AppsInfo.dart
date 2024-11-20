@@ -60,7 +60,32 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.cloud_upload_outlined),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text('要归档此应用吗？'),
+                            content: const Text('应用数据将保留在设备上，您随时可以点击启动器中的应用图标重新安装此应用的最新版本。'),
+                            buttonPadding: const EdgeInsets.all(16),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('取消'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('确定'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
                   ),
                   const Text('归档', style: TextStyle(fontSize: 12)),
                   const SizedBox(height: 10),
@@ -70,7 +95,32 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.disabled_visible_outlined),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text('要停用此应用吗？'),
+                            content: const Text('停用系统应用可能会导致系统异常。'),
+                            buttonPadding: const EdgeInsets.all(16),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('取消'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('确定'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
                   ),
                   const Text('停用', style: TextStyle(fontSize: 12)),
                   const SizedBox(height: 10),
@@ -80,7 +130,32 @@ class _AppsAppsInfoPageState extends State<AppsAppsInfoPage> with Components {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.stop_circle_outlined),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text('要强行停止此应用吗？'),
+                            content: const Text('强行停止应用可能会导致应用异常。'),
+                            buttonPadding: const EdgeInsets.all(16),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('取消'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('确定'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
                   ),
                   const Text('强行停止', style: TextStyle(fontSize: 12)),
                   const SizedBox(height: 10),

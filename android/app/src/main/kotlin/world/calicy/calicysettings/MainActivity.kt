@@ -1,4 +1,4 @@
-package world.calicy.calicysettings.calicy_settings
+package world.calicy.calicysettings
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -69,7 +69,7 @@ class _AppsSpecialAppsPermsPageState extends State<AppsSpecialAppsPermsPage>
             onTap: () {},
           ),
           buildListTile(
-            title: '不受流量限制',
+            title: '不限制移动数据用量',
             onTap: () {},
           ),
           buildListTile(
