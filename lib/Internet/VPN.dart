@@ -68,7 +68,7 @@ class _VPNPageState extends State<VPNPage> with Components {
                   thickness: 1,
                 ),
                 SizedBox(
-                  width: 40,
+                  width: 25,
                   child: Icon(Icons.settings_outlined),
                 ),
               ],

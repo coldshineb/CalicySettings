@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../Components.dart';
 import 'AllDevices.dart';
 import 'NFC.dart';
+import 'QuickShare.dart';
 
 class DevicePage extends StatefulWidget {
   const DevicePage({super.key});
@@ -98,7 +99,7 @@ class _DevicePageState extends State<DevicePage> with Components {
             onTap: () {},
           ),
           buildListTile(
-            icon: Icons.print_outlined,
+            icon: Icons.print,
             title: '打印',
             subtitle: '1 个打印服务已开启',
             onTap: () {},
@@ -113,7 +114,10 @@ class _DevicePageState extends State<DevicePage> with Components {
             icon: Icons.swap_horizontal_circle_outlined,
             title: '快速分享',
             subtitle: '与附近的设备分享文件',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, calicyPageRoute(DevicesQuickSharePage()));
+            },
           ),
           buildListTile(
             icon: Icons.directions_car_outlined,

@@ -87,7 +87,7 @@ class _DevicesBluetoothPageState extends State<DevicesBluetoothPage>
           ),
           buildListTile(
             title: '明天自动开启',
-            subtitle: '关闭蓝牙后将于明天重新打开吗，便于重新连接已配对设备',
+            subtitle: '关闭蓝牙后将于明天重新打开，便于重新连接已配对设备',
             onTap: () {},
             trailing: Switch(
               value: true,

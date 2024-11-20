@@ -1,6 +1,7 @@
 import 'package:calicy_settings/Internet/Internet.dart';
 import 'package:flutter/material.dart';
 
+import 'Apps/Apps.dart';
 import 'Components.dart';
 import 'Devices/Devices.dart';
 import 'Display/Display.dart';
@@ -172,7 +173,8 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '网络和互联网',
                   '无线局域网、移动网络、数据使用量和热点',
                   () {
-                    Navigator.push(context, calicyPageRoute(const InternetPage()));
+                    Navigator.push(
+                        context, calicyPageRoute(const InternetPage()));
                   },
                 ),
                 buildMainListTile(
@@ -182,17 +184,28 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '连接的设备',
                   '蓝牙、打印机、近场通信和设备连接',
                   () {
-                    Navigator.push(context, calicyPageRoute(const DevicePage()));
+                    Navigator.push(
+                        context, calicyPageRoute(const DevicePage()));
                   },
                 ),
                 buildMainListTile(
                   Colors.orange.shade100,
                   Colors.orange,
                   Icons.apps,
-                  '应用和通知',
+                  '应用',
                   '助理、最近使用的应用、默认应用',
                   () {
-                    //navigate to general settings
+                    Navigator.push(context, calicyPageRoute(const AppsPage()));
+                  },
+                ),
+                buildMainListTile(
+                  Colors.red.shade100,
+                  Colors.red,
+                  Icons.notifications_outlined,
+                  '通知',
+                  '历史通知、对话泡',
+                  () {
+                    Navigator.push(context, calicyPageRoute(const AppsPage()));
                   },
                 ),
                 buildMainListTile(
@@ -223,7 +236,8 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '显示和触控',
                   '亮度、深色主题、自动旋转、字体大小',
                   () {
-                    Navigator.push(context, calicyPageRoute(const DisplayPage()));
+                    Navigator.push(
+                        context, calicyPageRoute(const DisplayPage()));
                   },
                 ),
                 buildMainListTile(

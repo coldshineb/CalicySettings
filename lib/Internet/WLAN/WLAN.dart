@@ -63,8 +63,13 @@ class _WLANPageState extends State<WLANPage> with Components {
                         ),
                         onTap: () {},
                       ),
-                      const LinearProgressIndicator(
-                        minHeight: 2,
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: const LinearProgressIndicator(
+                          minHeight: 4,
+                        ),
                       ),
                     ],
                   ),
@@ -140,11 +145,24 @@ class _WLANPageState extends State<WLANPage> with Components {
             },
           ),
           buildListTile(
-              title: '添加网络',
-              icon: Icons.add,
-              onTap: () {
-                Navigator.push(context, calicyPageRoute(WLANAddNetworkPage()));
-              }),
+            title: '添加网络',
+            icon: Icons.add,
+            onTap: () {
+              Navigator.push(context, calicyPageRoute(WLANAddNetworkPage()));
+            },
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const VerticalDivider(
+                  thickness: 1,
+                ),
+                SizedBox(
+                  width: 25,
+                  child: Icon(Icons.qr_code),
+                ),
+              ],
+            ),
+          ),
           const Divider(height: 1),
           const ListTile(
             title: Text(

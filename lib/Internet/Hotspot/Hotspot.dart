@@ -33,7 +33,7 @@ class _HotspotPageState extends State<HotspotPage> with Components {
           ),
           const ListTile(
             title: Text(
-              '使用热点和网络共享功能，让其它设备能通过您的无线局域网或移动数据网络连接到互联网。应用还可以通过创建热点。与附近的设备共享内容。',
+              '使用热点和网络共享功能，让其它设备能通过您的无线局域网或移动数据网络连接到互联网。应用还可以通过创建热点，与附近的设备共享内容。',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 14,
