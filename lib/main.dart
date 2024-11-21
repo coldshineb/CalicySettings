@@ -23,6 +23,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+          popupMenuTheme: PopupMenuThemeData(
+            color: Colors.grey[100],
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+            ),
+          ),
           colorScheme: ColorScheme.fromSwatch(
             primarySwatch: Colors.blue,
             accentColor: Colors.blue,
@@ -76,6 +82,12 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: false),
       darkTheme: ThemeData(
+          popupMenuTheme: PopupMenuThemeData(
+            color: Colors.grey.shade900,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+            ),
+          ),
           colorScheme: ColorScheme.fromSwatch(
             primarySwatch: Colors.blue,
             accentColor: Colors.blue,
@@ -246,7 +258,7 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   Icons.draw_outlined,
                   '个性化',
                   '图标、壁纸、主题、字体',
-                      () {
+                  () {
                     Navigator.push(
                         context, calicyPageRoute(const PersonalizationPage()));
                   },

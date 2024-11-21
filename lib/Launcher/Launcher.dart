@@ -37,149 +37,58 @@ class _LauncherPageState extends State<LauncherPage> with Components {
               ),
             ),
           ),
-          buildListTile(
-            title: '桌面模式',
-            subtitle: '抽屉模式',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('桌面模式'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          RadioListTile(
-                            value: 0,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('抽屉模式'),
-                          ),
-                          RadioListTile(
-                            value: 1,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('桌面模式'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
+          PopupMenuButton(
+            tooltip: '',
+            itemBuilder: (context) => [
+              const CheckedPopupMenuItem(
+                child: Text('桌面模式'),
+              ),
+              const CheckedPopupMenuItem(
+                checked: true,
+                child: Text('抽屉模式'),
+              ),
+            ],
+            child: buildListTile(
+              title: '桌面模式',
+              subtitle: '抽屉模式',
+            ),
           ),
-          buildListTile(
-            title: '上滑手势',
-            subtitle: '搜索',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('上滑手势'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          RadioListTile(
-                            value: 0,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('搜索'),
-                          ),
-                          RadioListTile(
-                            value: 1,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('无'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
+          PopupMenuButton(
+            tooltip: '',
+            itemBuilder: (context) => [
+              const CheckedPopupMenuItem(
+                checked: true,
+                child: Text('搜索'),
+              ),
+              const CheckedPopupMenuItem(
+                child: Text('无'),
+              ),
+            ],
+            child: buildListTile(
+              title: '上滑手势',
+              subtitle: '搜索',
+            ),
           ),
-          buildListTile(
-            title: '下滑手势',
-            subtitle: '通知栏',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('下滑手势'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          RadioListTile(
-                            value: 0,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('通知栏'),
-                          ),
-                          RadioListTile(
-                            value: 1,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('搜索'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
+          PopupMenuButton(
+            tooltip: '',
+            itemBuilder: (context) => [
+              const CheckedPopupMenuItem(
+                value: 0,
+                checked: true,
+                child: Text('通知栏'),
+              ),
+              const CheckedPopupMenuItem(
+                value: 1,
+                child: Text('搜索'),
+              ),
+            ],
+            onSelected: (value) {
+              // Handle selection
             },
+            child: buildListTile(
+              title: '下滑手势',
+              subtitle: '通知栏',
+            ),
           ),
           buildListTile(
             title: '显示搜索栏',
@@ -214,10 +123,7 @@ class _LauncherPageState extends State<LauncherPage> with Components {
             title: '资讯一览',
             subtitle: '已开启',
             onTap: () {
-              Navigator.push(
-                context,
-                calicyPageRoute(LauncherATAGlancePage())
-              );
+              Navigator.push(context, calicyPageRoute(LauncherATAGlancePage()));
             },
           ),
           buildListTile(
@@ -255,65 +161,34 @@ class _LauncherPageState extends State<LauncherPage> with Components {
               onChanged: (value) {},
             ),
           ),
-          buildListTile(
-            title: '网格大小',
-            subtitle: '4x5',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('网格大小'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          RadioListTile(
-                            value: 0,
-                            groupValue: 1,
-                            onChanged: (value) {},
-                            title: const Text('4x4'),
-                          ),
-                          RadioListTile(
-                            value: 1,
-                            groupValue: 1,
-                            onChanged: (value) {},
-                            title: const Text('4x5'),
-                          ),
-                          RadioListTile(
-                            value: 2,
-                            groupValue: 1,
-                            onChanged: (value) {},
-                            title: const Text('5x5'),
-                          ),
-                          RadioListTile(
-                            value: 3,
-                            groupValue: 1,
-                            onChanged: (value) {},
-                            title: const Text('5x6'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
+          PopupMenuButton(
+            tooltip: '',
+            itemBuilder: (context) => [
+              const CheckedPopupMenuItem(
+                value: 0,
+                child: Text('4x4'),
+              ),
+              const CheckedPopupMenuItem(
+                value: 1,
+                checked: true,
+                child: Text('4x5'),
+              ),
+              const CheckedPopupMenuItem(
+                value: 2,
+                child: Text('5x5'),
+              ),
+              const CheckedPopupMenuItem(
+                value: 3,
+                child: Text('5x6'),
+              ),
+            ],
+            onSelected: (value) {
+              // Handle selection
             },
+            child: buildListTile(
+              title: '网格大小',
+              subtitle: '4x5',
+            ),
           ),
           buildListTile(
             title: '显示建议',
@@ -370,53 +245,26 @@ class _LauncherPageState extends State<LauncherPage> with Components {
               ),
             ),
           ),
-          buildListTile(
-            title: '排布样式',
-            subtitle: '横向排布',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('排布样式'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          RadioListTile(
-                            value: 0,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('横向排布'),
-                          ),
-                          RadioListTile(
-                            value: 1,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('纵向排布'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
+          PopupMenuButton(
+            tooltip: '',
+            itemBuilder: (context) => [
+              const CheckedPopupMenuItem(
+                value: 0,
+                checked: true,
+                child: Text('横向排布'),
+              ),
+              const CheckedPopupMenuItem(
+                value: 1,
+                child: Text('纵向排布'),
+              ),
+            ],
+            onSelected: (value) {
+              // Handle selection
             },
+            child: buildListTile(
+              title: '排布样式',
+              subtitle: '横向排布',
+            ),
           ),
           buildListTile(
             title: '显示内存使用情况',
