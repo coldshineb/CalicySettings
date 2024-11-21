@@ -8,7 +8,6 @@ import 'Apps/Apps.dart';
 import 'Components.dart';
 import 'Devices/Devices.dart';
 import 'Display/Display.dart';
-import 'Internet/WLAN/WLAN.dart';
 
 void main() {
   runApp(const MyApp());
@@ -128,7 +127,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           useMaterial3: false),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -152,20 +151,25 @@ class _MyHomePageState extends State<MyHomePage> with Components {
           Expanded(
             child: ListView(
               children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                   child: Card(
-                    child: ListTile(
-                      title: Text(
-                        '搜索设置项',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.grey),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(10),
+                      onTap: () {},
+                      child: const ListTile(
+                        title: Text(
+                          '搜索设置项',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        leading: Icon(Icons.search, color: Colors.blue),
+                        trailing: Icon(Icons.account_circle_outlined,
+                            color: Colors.blue),
                       ),
-                      leading: Icon(Icons.search, color: Colors.blue),
-                      trailing: Icon(Icons.account_circle_outlined,
-                          color: Colors.blue),
                     ),
                   ),
                 ),
@@ -208,7 +212,8 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '通知',
                   '历史通知、对话泡',
                   () {
-                    Navigator.push(context, calicyPageRoute(const NotificationPage()));
+                    Navigator.push(
+                        context, calicyPageRoute(const NotificationPage()));
                   },
                 ),
                 buildMainListTile(
@@ -218,7 +223,8 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '电池',
                   '省电模式、电池使用情况',
                   () {
-                    Navigator.push(context, calicyPageRoute(const BatteryPage()));
+                    Navigator.push(
+                        context, calicyPageRoute(const BatteryPage()));
                   },
                 ),
                 buildMainListTile(
@@ -340,8 +346,7 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '关于本机',
                   '型号、Calicy 版本和状态',
                   () {
-                    Navigator.push(
-                        context, calicyPageRoute(const AboutPage()));
+                    Navigator.push(context, calicyPageRoute(const AboutPage()));
                   },
                 ),
                 buildMainListTile(
