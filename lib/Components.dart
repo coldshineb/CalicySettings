@@ -25,6 +25,17 @@ mixin class Components {
     );
   }
 
+  PopupMenuButton<int> buildPopupMenuButton(title, subtitle, items) {
+    return PopupMenuButton(
+      tooltip: '',
+      itemBuilder: (context) => items,
+      child: buildListTile(
+        title: title,
+        subtitle: subtitle,
+      ),
+    );
+  }
+
   PageRoute calicyPageRoute(Widget page) {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => page,

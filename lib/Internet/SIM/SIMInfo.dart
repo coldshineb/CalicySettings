@@ -154,60 +154,21 @@ class _SIMSIMInfoPageState extends State<SIMSIMInfoPage> with Components {
               onChanged: (value) {},
             ),
           ),
-          buildListTile(
-            title: '漫游联网限制',
-            subtitle: '禁止任何应用联网',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog.adaptive(
-                    title: const Text('漫游联网限制'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          RadioListTile<int>(
-                            title: const Text('全部应用可联网'),
-                            value: 0,
-                            groupValue: 2,
-                            onChanged: (value) {},
-                          ),
-                          RadioListTile<int>(
-                            title: const Text('仅白名单应用可联网'),
-                            value: 1,
-                            groupValue: 2,
-                            onChanged: (value) {},
-                          ),
-                          RadioListTile<int>(
-                            title: const Text('禁止任何应用联网'),
-                            value: 2,
-                            groupValue: 2,
-                            onChanged: (value) {},
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-          ),
+          buildPopupMenuButton('漫游联网限制', '禁止任何应用联网', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              child: Text('全部应用可联网'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              child: Text('仅白名单应用可联网'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 2,
+              checked: true,
+              child: Text('禁止任何应用联网'),
+            ),
+          ]),
           const Divider(height: 1),
           const ListTile(
             title: Text(
@@ -246,108 +207,32 @@ class _SIMSIMInfoPageState extends State<SIMSIMInfoPage> with Components {
               onChanged: (value) {},
             ),
           ),
-          buildListTile(
-            title: '首选网络类型',
-            subtitle: '5G（推荐）',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog.adaptive(
-                    title: const Text('首选网络类型'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          RadioListTile<int>(
-                            title: const Text('3G'),
-                            value: 1,
-                            groupValue: 3,
-                            onChanged: (value) {},
-                          ),
-                          RadioListTile<int>(
-                            title: const Text('4G'),
-                            value: 2,
-                            groupValue: 3,
-                            onChanged: (value) {},
-                          ),
-                          RadioListTile<int>(
-                            title: const Text('5G（推荐）'),
-                            value: 3,
-                            groupValue: 3,
-                            onChanged: (value) {},
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-          ),
-          buildListTile(
-            title: '运营商',
-            subtitle: '自动选择，Calicy 移动',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog.adaptive(
-                    title: const Text('运营商'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          RadioListTile<int>(
-                            title: const Text('自动选择'),
-                            value: 1,
-                            groupValue: 1,
-                            onChanged: (value) {},
-                          ),
-                          RadioListTile<int>(
-                            title: const Text('手动选择'),
-                            value: 2,
-                            groupValue: 1,
-                            onChanged: (value) {},
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-          ),
+          buildPopupMenuButton('首选网络类型', '5G（推荐）', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              child: Text('3G'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              child: Text('4G'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 2,
+              checked: true,
+              child: Text('5G（推荐）'),
+            ),
+          ]),
+          buildPopupMenuButton('运营商', '自动选择，Calicy 移动', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              checked: true,
+              child: Text('自动选择'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              child: Text('手动选择'),
+            ),
+          ]),
           buildListTile(title: '接入点名称', onTap: () {}),
           buildListTile(
               title: '高清通话',
@@ -377,53 +262,17 @@ class _SIMSIMInfoPageState extends State<SIMSIMInfoPage> with Components {
               subtitle: '当无线局域网通话可用时，将使用无线局域网接收或拨打电话',
               onTap: () {},
               trailing: Switch(value: true, onChanged: (value) {})),
-          buildListTile(
-              title: '连接偏好设定',
-              subtitle: '无线局域网优先',
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog.adaptive(
-                      title: const Text('连接偏好设定'),
-                      content: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            RadioListTile<int>(
-                              title: const Text('移动数据网络优先'),
-                              value: 1,
-                              groupValue: 2,
-                              onChanged: (value) {},
-                            ),
-                            RadioListTile<int>(
-                              title: const Text('无线局域网优先'),
-                              value: 2,
-                              groupValue: 2,
-                              onChanged: (value) {},
-                            ),
-                          ],
-                        ),
-                      ),
-                      buttonPadding: const EdgeInsets.all(16),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Text('取消'),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Text('确定'),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              }),
+          buildPopupMenuButton('连接偏好设定', '无线局域网优先', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              child: Text('移动数据网络优先'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              checked: true,
+              child: Text('无线局域网优先'),
+            ),
+          ]),
           const Divider(height: 1),
           const ListTile(
             title: Text(

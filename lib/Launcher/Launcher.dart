@@ -37,59 +37,39 @@ class _LauncherPageState extends State<LauncherPage> with Components {
               ),
             ),
           ),
-          PopupMenuButton(
-            tooltip: '',
-            itemBuilder: (context) => [
-              const CheckedPopupMenuItem(
-                child: Text('桌面模式'),
-              ),
-              const CheckedPopupMenuItem(
-                checked: true,
-                child: Text('抽屉模式'),
-              ),
-            ],
-            child: buildListTile(
-              title: '桌面模式',
-              subtitle: '抽屉模式',
+          buildPopupMenuButton('桌面模式', '抽屉模式', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              child: Text('桌面模式'),
             ),
-          ),
-          PopupMenuButton(
-            tooltip: '',
-            itemBuilder: (context) => [
-              const CheckedPopupMenuItem(
-                checked: true,
-                child: Text('搜索'),
-              ),
-              const CheckedPopupMenuItem(
-                child: Text('无'),
-              ),
-            ],
-            child: buildListTile(
-              title: '上滑手势',
-              subtitle: '搜索',
+            const CheckedPopupMenuItem(
+              value: 1,
+              checked: true,
+              child: Text('抽屉模式'),
             ),
-          ),
-          PopupMenuButton(
-            tooltip: '',
-            itemBuilder: (context) => [
-              const CheckedPopupMenuItem(
-                value: 0,
-                checked: true,
-                child: Text('通知栏'),
-              ),
-              const CheckedPopupMenuItem(
-                value: 1,
-                child: Text('搜索'),
-              ),
-            ],
-            onSelected: (value) {
-              // Handle selection
-            },
-            child: buildListTile(
-              title: '下滑手势',
-              subtitle: '通知栏',
+          ]),
+          buildPopupMenuButton('上滑手势', '搜索', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              checked: true,
+              child: Text('搜索'),
             ),
-          ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              child: Text('无'),
+            ),
+          ]),
+          buildPopupMenuButton('下滑手势', '通知栏', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              checked: true,
+              child: Text('通知栏'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              child: Text('搜索'),
+            ),
+          ]),
           buildListTile(
             title: '显示搜索栏',
             trailing: Switch(
@@ -161,35 +141,25 @@ class _LauncherPageState extends State<LauncherPage> with Components {
               onChanged: (value) {},
             ),
           ),
-          PopupMenuButton(
-            tooltip: '',
-            itemBuilder: (context) => [
-              const CheckedPopupMenuItem(
-                value: 0,
-                child: Text('4x4'),
-              ),
-              const CheckedPopupMenuItem(
-                value: 1,
-                checked: true,
-                child: Text('4x5'),
-              ),
-              const CheckedPopupMenuItem(
-                value: 2,
-                child: Text('5x5'),
-              ),
-              const CheckedPopupMenuItem(
-                value: 3,
-                child: Text('5x6'),
-              ),
-            ],
-            onSelected: (value) {
-              // Handle selection
-            },
-            child: buildListTile(
-              title: '网格大小',
-              subtitle: '4x5',
+          buildPopupMenuButton('网格大小', '4x5', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              child: Text('4x4'),
             ),
-          ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              checked: true,
+              child: Text('4x5'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 2,
+              child: Text('5x5'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 3,
+              child: Text('5x6'),
+            ),
+          ]),
           buildListTile(
             title: '显示建议',
             subtitle: '在常驻应用图标栏的空位处提供应用建议',
@@ -245,27 +215,17 @@ class _LauncherPageState extends State<LauncherPage> with Components {
               ),
             ),
           ),
-          PopupMenuButton(
-            tooltip: '',
-            itemBuilder: (context) => [
-              const CheckedPopupMenuItem(
-                value: 0,
-                checked: true,
-                child: Text('横向排布'),
-              ),
-              const CheckedPopupMenuItem(
-                value: 1,
-                child: Text('纵向排布'),
-              ),
-            ],
-            onSelected: (value) {
-              // Handle selection
-            },
-            child: buildListTile(
-              title: '排布样式',
-              subtitle: '横向排布',
+          buildPopupMenuButton('排布方式', '横向排布', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              checked: true,
+              child: Text('横向排布'),
             ),
-          ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              child: Text('纵向排布'),
+            ),
+          ]),
           buildListTile(
             title: '显示内存使用情况',
             trailing: Switch(

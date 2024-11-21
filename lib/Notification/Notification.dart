@@ -84,59 +84,24 @@ class _NotificationPageState extends State<NotificationPage> with Components {
               ),
             ),
           ),
-          buildListTile(
-            title: '锁屏通知',
-            subtitle: '隐藏敏感内容',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('锁屏通知'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          RadioListTile(
-                            value: 0,
-                            groupValue: 1,
-                            onChanged: (value) {},
-                            title: const Text('显示全部内容'),
-                          ),
-                          RadioListTile(
-                            value: 1,
-                            groupValue: 1,
-                            onChanged: (value) {},
-                            title: const Text('隐藏敏感内容'),
-                          ),
-                          RadioListTile(
-                            value: 2,
-                            groupValue: 1,
-                            onChanged: (value) {},
-                            title: const Text('不显示通知'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
+          buildPopupMenuButton(
+            '锁屏通知',
+            '隐藏敏感内容',
+            [
+              const CheckedPopupMenuItem(
+                value: 0,
+                child: Text('显示全部内容'),
+              ),
+              const CheckedPopupMenuItem(
+                value: 1,
+                checked: true,
+                child: Text('隐藏敏感内容'),
+              ),
+              const CheckedPopupMenuItem(
+                value: 2,
+                child: Text('不显示通知'),
+              ),
+            ],
           ),
           const Divider(
             height: 1,

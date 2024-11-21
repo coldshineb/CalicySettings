@@ -48,115 +48,36 @@ class _PersonalizationPageState extends State<PersonalizationPage>
             title: '壁纸',
             onTap: () {},
           ),
-          buildListTile(
-            title: '图标大小',
-            subtitle: '默认',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('图标大小'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          RadioListTile(
-                            value: 1,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('小'),
-                          ),
-                          RadioListTile(
-                            value: 0,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('默认'),
-                          ),
-                          RadioListTile(
-                            value: 2,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('大'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-          ),
-          buildListTile(
-            icon: Icons.widgets_outlined,
-            title: '图标形状',
-            subtitle: '默认',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('图标形状'),
-                    content: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          RadioListTile(
-                            value: 0,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('默认'),
-                          ),
-                          RadioListTile(
-                            value: 1,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('圆形'),
-                          ),
-                          RadioListTile(
-                            value: 2,
-                            groupValue: 0,
-                            onChanged: (value) {},
-                            title: const Text('圆角矩形'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    buttonPadding: const EdgeInsets.all(16),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('取消'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('确定'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-          ),
+          buildPopupMenuButton('图标大小', '默认', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              checked: true,
+              child: Text('默认'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              child: Text('小'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 2,
+              child: Text('大'),
+            ),
+          ]),
+          buildPopupMenuButton('图标形状', '默认', [
+            const CheckedPopupMenuItem(
+              value: 0,
+              checked: true,
+              child: Text('默认'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 1,
+              child: Text('圆形'),
+            ),
+            const CheckedPopupMenuItem(
+              value: 2,
+              child: Text('圆角矩形'),
+            ),
+          ]),
           buildListTile(
             title: '色彩对比度',
             subtitle: '默认',
