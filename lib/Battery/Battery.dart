@@ -1,4 +1,3 @@
-import 'package:calicy_settings/Apps/AppsInfo.dart';
 import 'package:calicy_settings/Battery/BatterySharing.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';

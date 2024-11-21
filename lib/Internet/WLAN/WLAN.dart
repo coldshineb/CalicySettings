@@ -74,7 +74,6 @@ class _WLANPageState extends State<WLANPage> with Components {
                     ],
                   ),
                 );
-                ;
               } else {
                 return Column(
                   children: [

@@ -1,4 +1,3 @@
-import 'package:calicy_settings/Apps/AppsInfo.dart';
 import 'package:flutter/material.dart';
 
 import '../Components.dart';

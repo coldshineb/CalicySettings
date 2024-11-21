@@ -1,4 +1,3 @@
-import 'package:calicy_settings/Apps/AppsInfo.dart';
 import 'package:calicy_settings/Launcher/AtAGlance.dart';
 import 'package:flutter/material.dart';
 
