@@ -4,6 +4,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
+import 'BatterySaver.dart';
 
 class BatteryPage extends StatefulWidget {
   const BatteryPage({super.key});
@@ -155,7 +156,12 @@ class _BatteryPageState extends State<BatteryPage> with Components {
           buildListTile(
             title: '省电模式',
             subtitle: '在电量降到 20% 时开启',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                calicyPageRoute(const BatteryBatterySaverPage()),
+              );
+            },
           ),
           buildListTile(
             title: '自适应充电',

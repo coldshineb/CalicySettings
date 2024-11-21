@@ -148,13 +148,15 @@ class _WLANPageState extends State<WLANPage> with Components {
             title: '添加网络',
             icon: Icons.add,
             onTap: () {
-              Navigator.push(context, calicyPageRoute(const WLANAddNetworkPage()));
+              Navigator.push(
+                  context, calicyPageRoute(const WLANAddNetworkPage()));
             },
             trailing: const Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 VerticalDivider(
                   thickness: 1,
+                  width: 20,
                 ),
                 SizedBox(
                   width: 25,
@@ -185,7 +187,8 @@ class _WLANPageState extends State<WLANPage> with Components {
             title: '已保存的网络',
             subtitle: '2 个网络',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(const WLANSavedNetworkPage()));
+              Navigator.push(
+                  context, calicyPageRoute(const WLANSavedNetworkPage()));
             },
           ),
         ],
