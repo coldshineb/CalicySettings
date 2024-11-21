@@ -45,6 +45,9 @@ class _BatteryBatterySharingPageState extends State<BatteryBatterySharingPage>
             ),
             onTap: () {},
           ),
+          SizedBox(
+            height: 10,
+          ),
           const ListTile(
             title: Text(
               '将其它设备放在手机的背面，即可为这些设备充电。',
@@ -53,6 +56,9 @@ class _BatteryBatterySharingPageState extends State<BatteryBatterySharingPage>
                 fontSize: 14,
               ),
             ),
+          ),
+          SizedBox(
+            height: 10,
           ),
           Divider(
             height: 1,

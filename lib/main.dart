@@ -1,5 +1,6 @@
 import 'package:calicy_settings/Battery/Battery.dart';
 import 'package:calicy_settings/Internet/Internet.dart';
+import 'package:calicy_settings/Launcher/Launcher.dart';
 import 'package:calicy_settings/Notification/Notification.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ import 'Apps/Apps.dart';
 import 'Components.dart';
 import 'Devices/Devices.dart';
 import 'Display/Display.dart';
+import 'Personalization/Personalization.dart';
 
 void main() {
   runApp(const MyApp());
@@ -231,13 +233,24 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   Colors.purple.shade100,
                   Colors.purple,
                   Icons.home,
-                  '桌面',
-                  '壁纸、主题、图标和小部件',
+                  '主屏幕',
+                  '桌面行为、布局、概览、资讯一览',
                   () {
-                    //navigate to general settings
+                    Navigator.push(
+                        context, calicyPageRoute(const LauncherPage()));
                   },
                 ),
-                //display
+                buildMainListTile(
+                  Colors.green.shade100,
+                  Colors.green,
+                  Icons.draw_outlined,
+                  '个性化',
+                  '图标、壁纸、主题、字体',
+                      () {
+                    Navigator.push(
+                        context, calicyPageRoute(const PersonalizationPage()));
+                  },
+                ),
                 buildMainListTile(
                   Colors.orange.shade100,
                   Colors.orange[600]!,
