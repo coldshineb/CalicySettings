@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Components.dart';
+
 class DisplayPage extends StatefulWidget {
   const DisplayPage({super.key});
 
@@ -7,7 +9,7 @@ class DisplayPage extends StatefulWidget {
   State<DisplayPage> createState() => _DisplayPageState();
 }
 
-class _DisplayPageState extends State<DisplayPage> {
+class _DisplayPageState extends State<DisplayPage> with Components {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +27,58 @@ class _DisplayPageState extends State<DisplayPage> {
       ),
       body: ListView(
         children: [
-          //dark theme
-          ListTile(
-            title: Text('深色主题'),
-            onTap: () {},
-          )
+          buildListTile(
+              title: '深色模式',
+              subtitle: '在日出后自动关闭',
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const VerticalDivider(
+                    thickness: 1,
+                  ),
+                  Switch(
+                    value: true,
+                    onChanged: (value) {
+                      setState(() {
+                        value = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              onTap: () {}),
+          buildListTile(
+              title: '夜间模式',
+              subtitle: '在日出后自动关闭',
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const VerticalDivider(
+                    thickness: 1,
+                  ),
+                  Switch(
+                    value: true,
+                    onChanged: (value) {
+                      setState(() {
+                        value = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              onTap: () {}),
+          buildListTile(
+              title: '灰度模式',
+              subtitle: '在起床时间表后关闭',
+              trailing: Switch(
+                value: true,
+                onChanged: (value) {
+                  setState(() {
+                    value = value;
+                  });
+                },
+              ),
+              onTap: () {}),
         ],
       ),
     );
