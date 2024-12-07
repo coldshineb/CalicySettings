@@ -144,7 +144,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           useMaterial3: false),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

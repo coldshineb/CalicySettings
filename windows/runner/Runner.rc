@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "world.calicy.calicysettings" "\0"
-            VALUE "FileDescription", "calicy_settings" "\0"
+            VALUE "CompanyName", "Calicy LLC" "\0"
+            VALUE "FileDescription", "Calicy 设置" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "calicy_settings" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 world.calicy.calicysettings. All rights reserved." "\0"
-            VALUE "OriginalFilename", "calicy_settings.exe" "\0"
-            VALUE "ProductName", "calicy_settings" "\0"
+            VALUE "InternalName", "Calicy Settings" "\0"
+            VALUE "LegalCopyright", "(C) 2022-2024 Calicy LLC. All rights reserved." "\0"
+            VALUE "OriginalFilename", "CalicySettings.exe" "\0"
+            VALUE "ProductName", "Calicy Settings" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
