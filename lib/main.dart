@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Calicy 设置',
       theme: ThemeData(
           popupMenuTheme: PopupMenuThemeData(
             color: Colors.grey[100],
