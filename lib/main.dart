@@ -1,15 +1,16 @@
-import 'package:calicy_settings/Battery/Battery.dart';
-import 'package:calicy_settings/Internet/Internet.dart';
-import 'package:calicy_settings/Launcher/Launcher.dart';
-import 'package:calicy_settings/Notification/Notification.dart';
 import 'package:flutter/material.dart';
 
 import 'About/About.dart';
 import 'Apps/Apps.dart';
+import 'Battery/Battery.dart';
 import 'Components.dart';
 import 'Devices/Devices.dart';
 import 'Display/Display.dart';
+import 'Internet/Internet.dart';
+import 'Launcher/Launcher.dart';
+import 'Notification/Notification.dart';
 import 'Personalization/Personalization.dart';
+import 'Sound/Sound.dart';
 
 void main() {
   runApp(const MyApp());
@@ -281,7 +282,7 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '提示音和振动',
                   '音量、触感反馈、勿扰',
                   () {
-                    //navigate to general settings
+                    Navigator.push(context, calicyPageRoute(const SoundPage()));
                   },
                 ),
                 buildMainListTile(

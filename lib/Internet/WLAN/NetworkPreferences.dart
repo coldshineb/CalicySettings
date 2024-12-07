@@ -80,7 +80,7 @@ class _WLANNetworkPreferencesPageState
             onTap: () {},
           ),
           _buildInternetListTile(
-            icon: Icons.notifications,
+            icon: Icons.notifications_outlined,
             title: '附近有公共网络时发出通知',
             subtitle: '有可用的高品质公共网络时通知我',
             trailing: Switch(
