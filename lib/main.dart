@@ -12,6 +12,7 @@ import 'Notification/Notification.dart';
 import 'Personalization/Personalization.dart';
 import 'Sound/Sound.dart';
 import 'Storage/Storage.dart';
+import 'System/System.dart';
 
 void main() {
   runApp(const MyApp());
@@ -143,7 +144,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           useMaterial3: false),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -364,7 +365,8 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '系统',
                   '语言、手势、时间、备份',
                   () {
-                    //navigate to general settings
+                    Navigator.push(
+                        context, calicyPageRoute(const SystemPage()));
                   },
                 ),
                 buildMainListTile(
