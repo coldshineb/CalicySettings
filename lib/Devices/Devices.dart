@@ -1,9 +1,10 @@
-import 'package:calicy_settings/Devices/Bluetooth.dart';
-import 'package:calicy_settings/Devices/DevicesInfo.dart';
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
 import 'AllDevices.dart';
+import 'Bluetooth.dart';
+import 'CalicyConnect.dart';
+import 'DevicesInfo.dart';
 import 'NFC.dart';
 import 'QuickShare.dart';
 
@@ -71,7 +72,8 @@ class _DevicePageState extends State<DevicePage> with Components {
             icon: Icons.arrow_forward,
             title: '查看全部',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(const DevicesAllDevicesPage()));
+              Navigator.push(
+                  context, calicyPageRoute(const DevicesAllDevicesPage()));
             },
           ),
           const Divider(
@@ -81,7 +83,8 @@ class _DevicePageState extends State<DevicePage> with Components {
             icon: Icons.bluetooth,
             title: '蓝牙',
             onTap: () {
-              Navigator.push(context, calicyPageRoute(const DevicesBluetoothPage()));
+              Navigator.push(
+                  context, calicyPageRoute(const DevicesBluetoothPage()));
             },
           ),
           buildListTile(
@@ -108,7 +111,10 @@ class _DevicePageState extends State<DevicePage> with Components {
             icon: Icons.phonelink,
             title: '互通协作',
             subtitle: '与其它 Calicy 设备协作',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, calicyPageRoute(const DevicesCalicyConnectPage()));
+            },
           ),
           buildListTile(
             icon: Icons.swap_horizontal_circle_outlined,
