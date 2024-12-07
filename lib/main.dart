@@ -11,6 +11,7 @@ import 'Launcher/Launcher.dart';
 import 'Notification/Notification.dart';
 import 'Personalization/Personalization.dart';
 import 'Sound/Sound.dart';
+import 'Storage/Storage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -290,9 +291,10 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   Colors.purple,
                   Icons.storage,
                   '存储空间',
-                  '已使用 10% - 还剩 990 GB',
+                  '已使用 10% - 还剩 921 GB',
                   () {
-                    //navigate to general settings
+                    Navigator.push(
+                        context, calicyPageRoute(const StoragePage()));
                   },
                 ),
                 buildMainListTile(
