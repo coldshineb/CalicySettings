@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'About/About.dart';
+import 'Accounts/Accounts.dart';
 import 'Apps/Apps.dart';
 import 'Battery/Battery.dart';
 import 'Components.dart';
@@ -9,6 +11,7 @@ import 'Display/Display.dart';
 import 'Internet/Internet.dart';
 import 'Launcher/Launcher.dart';
 import 'Location/Location.dart';
+import 'More/More.dart';
 import 'Notification/Notification.dart';
 import 'Personalization/Personalization.dart';
 import 'Privacy/Privacy.dart';
@@ -147,7 +150,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           useMaterial3: false),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -330,17 +333,19 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '安全',
                   '屏幕锁定、人身安全、加密和设备管理',
                   () {
-                    Navigator.push(context, calicyPageRoute(const SecurityPage()));
+                    Navigator.push(
+                        context, calicyPageRoute(const SecurityPage()));
                   },
                 ),
                 buildMainListTile(
-                  Colors.orange.shade100,
-                  Colors.orange[600]!,
+                  Colors.yellow.shade100,
+                  Colors.yellow[600]!,
                   Icons.account_circle_outlined,
                   '账号',
                   'Calicy 账号',
                   () {
-                    //navigate to general settings
+                    Navigator.push(
+                        context, calicyPageRoute(const AccountsPage()));
                   },
                 ),
                 buildMainListTile(
@@ -350,17 +355,56 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '无障碍',
                   '显示、互动、音频',
                   () {
-                    //navigate to general settings
+                    showAdaptiveDialog(
+                        context: context,
+                        builder: (context) {
+                          return const AlertDialog(
+                            title: Text('无障碍'),
+                            content: Text('显示、互动、音频'),
+                          );
+                        });
+                  },
+                ),
+                ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.green.shade100,
+                    child: SvgPicture.asset(
+                      'assets/svg/digital-wellbeing-svgrepo-com.svg',
+                      color: Colors.green[600]!,
+                      height: 30,
+                    ),
+                  ),
+                  title: Text(
+                    '数字健康和家长控制',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  subtitle: Text(
+                    '屏幕使用时间、应用定时器、睡眠时间表',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(color: Colors.grey),
+                  ),
+                  onTap: () {
+                    showAdaptiveDialog(
+                        context: context,
+                        builder: (context) {
+                          return const AlertDialog(
+                            title: Text('数字健康和家长控制'),
+                            content: Text('屏幕使用时间、应用定时器、睡眠时间表'),
+                          );
+                        });
                   },
                 ),
                 buildMainListTile(
-                  Colors.green.shade100,
-                  Colors.green[600]!,
-                  Icons.accessibility,
-                  '数字健康和家长控制',
-                  '屏幕使用时间、应用定时器、睡眠时间表',
-                  () {
-                    //navigate to general settings
+                  Colors.grey.shade100,
+                  Colors.grey,
+                  Icons.more_horiz_outlined,
+                  '更多设置',
+                  '辅助功能、开发者选项',
+                      () {
+                    Navigator.push(
+                        context, calicyPageRoute(const MorePage()));
                   },
                 ),
                 buildMainListTile(
@@ -391,7 +435,6 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '提示和支持',
                   '帮助中心文章、电话与聊天支持',
                   () {
-                    //navigate to general settings/
                   },
                 ),
               ],
