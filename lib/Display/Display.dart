@@ -1,8 +1,8 @@
-import 'package:calicy_settings/Display/DarkTheme.dart';
-import 'package:calicy_settings/Display/NightVision.dart';
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
+import 'DarkTheme.dart';
+import 'NightVision.dart';
 
 class DisplayPage extends StatefulWidget {
   const DisplayPage({super.key});

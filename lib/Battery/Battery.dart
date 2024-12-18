@@ -1,9 +1,9 @@
-import 'package:calicy_settings/Battery/BatterySharing.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
 import 'BatterySaver.dart';
+import 'BatterySharing.dart';
 
 class BatteryPage extends StatefulWidget {
   const BatteryPage({super.key});

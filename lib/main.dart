@@ -8,8 +8,11 @@ import 'Devices/Devices.dart';
 import 'Display/Display.dart';
 import 'Internet/Internet.dart';
 import 'Launcher/Launcher.dart';
+import 'Location/Location.dart';
 import 'Notification/Notification.dart';
 import 'Personalization/Personalization.dart';
+import 'Privacy/Privacy.dart';
+import 'Security/Security.dart';
 import 'Sound/Sound.dart';
 import 'Storage/Storage.dart';
 import 'System/System.dart';
@@ -144,7 +147,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           useMaterial3: false),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -303,9 +306,10 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   Colors.blue[300]!,
                   Icons.remove_red_eye_outlined,
                   '隐私',
-                  '权限、账号活动、个人信息',
+                  '权限、个人信息',
                   () {
-                    //navigate to general settings
+                    Navigator.push(
+                        context, calicyPageRoute(const PrivacyPage()));
                   },
                 ),
                 buildMainListTile(
@@ -315,7 +319,8 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   '位置信息',
                   '已关闭',
                   () {
-                    //navigate to general settings
+                    Navigator.push(
+                        context, calicyPageRoute(const LocationPage()));
                   },
                 ),
                 buildMainListTile(
@@ -323,9 +328,9 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   Colors.green,
                   Icons.lock_outline,
                   '安全',
-                  '屏幕锁定、加密和设备管理',
+                  '屏幕锁定、人身安全、加密和设备管理',
                   () {
-                    //navigate to general settings
+                    Navigator.push(context, calicyPageRoute(const SecurityPage()));
                   },
                 ),
                 buildMainListTile(

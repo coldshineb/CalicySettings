@@ -1,7 +1,7 @@
-import 'package:calicy_settings/Apps/AppsInfo.dart';
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
+import 'AppsInfo.dart';
 import 'SpecialAppPerms.dart';
 class AppsPage extends StatefulWidget {
   const AppsPage({super.key});

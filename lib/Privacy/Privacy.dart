@@ -2,22 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../Components.dart';
 
-class DevicesCalicyConnectPage extends StatefulWidget {
-  const DevicesCalicyConnectPage({super.key});
+class PrivacyPage extends StatefulWidget {
+  const PrivacyPage({super.key});
 
   @override
-  State<DevicesCalicyConnectPage> createState() =>
-      _DevicesCalicyConnectPageState();
+  State<PrivacyPage> createState() => _PrivacyPageState();
 }
 
-class _DevicesCalicyConnectPageState extends State<DevicesCalicyConnectPage>
-    with Components {
+class _PrivacyPageState extends State<PrivacyPage> with Components {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '互通协作',
+          '隐私',
           style: TextStyle(fontSize: 18),
         ),
         leading: IconButton(
@@ -29,41 +27,25 @@ class _DevicesCalicyConnectPageState extends State<DevicesCalicyConnectPage>
       ),
       body: ListView(
         children: [
-          ListTile(
-            tileColor: Colors.blue,
-            leading: const Icon(null),
-            title: const Text("互通协作",
-                style: TextStyle(color: Colors.white),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis),
-            trailing: Switch(
-              activeColor: Colors.white,
-              value: true,
-              onChanged: (value) {},
-            ),
-            onTap: () {},
-          ),
-          const SizedBox(
-            height: 10,
-          ),
           const ListTile(
             title: Text(
-              '已登录您 Calicy 账号的其它设备将能找到您的设备并与其分享内容。',
+              '权限',
               style: TextStyle(
                 color: Colors.grey,
-                fontSize: 14,
+                fontSize: 12,
               ),
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          buildListTile(
+              title: '权限控制器', subtitle: '控制应用对您数据的访问权限', onTap: () {}),
+          buildListTile(
+              title: '隐私信息中心', subtitle: '显示最近使用过权限的应用', onTap: () {}),
           const Divider(
             height: 1,
           ),
           const ListTile(
             title: Text(
-              '通用',
+              '控件',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 12,
@@ -71,9 +53,8 @@ class _DevicesCalicyConnectPageState extends State<DevicesCalicyConnectPage>
             ),
           ),
           buildListTile(
-              icon: Icons.apps_outlined,
-              title: '应用共享',
-              subtitle: '在其它设备上打开本机正在使用的应用',
+              title: '摄像头使用权限',
+              subtitle: '针对应用和服务',
               trailing: Switch(
                 value: true,
                 onChanged: (value) {
@@ -84,9 +65,8 @@ class _DevicesCalicyConnectPageState extends State<DevicesCalicyConnectPage>
               ),
               onTap: () {}),
           buildListTile(
-              icon: Icons.mobile_screen_share_outlined,
-              title: '桌面共享',
-              subtitle: '在其它设备上访问本机桌面',
+              title: '麦克风使用权限',
+              subtitle: '针对应用和服务。关闭此设置后，系统仍可能在您拨打紧急电话号码时分享麦克风数据',
               trailing: Switch(
                 value: true,
                 onChanged: (value) {
@@ -97,9 +77,20 @@ class _DevicesCalicyConnectPageState extends State<DevicesCalicyConnectPage>
               ),
               onTap: () {}),
           buildListTile(
-              icon: Icons.copy_outlined,
-              title: '剪贴板共享',
-              subtitle: '在其它设备上粘贴本机复制的图片、文字',
+              title: '隐身模式',
+              subtitle: '系统将拒绝所有应用录音、定位和拍照',
+              trailing: Switch(
+                value: false,
+                onChanged: (value) {
+                  setState(() {
+                    value = value;
+                  });
+                },
+              ),
+              onTap: () {}),
+          buildListTile(
+              title: '显示剪贴板访问通知',
+              subtitle: '系统会在应用访问您复制的文字、图片或其他内容时显示一条消息',
               trailing: Switch(
                 value: true,
                 onChanged: (value) {
@@ -110,9 +101,8 @@ class _DevicesCalicyConnectPageState extends State<DevicesCalicyConnectPage>
               ),
               onTap: () {}),
           buildListTile(
-              icon: Icons.notifications_outlined,
-              title: '通知共享',
-              subtitle: '本机锁屏时，在其它设备上显示新通知',
+              title: '显示密码',
+              subtitle: '输入时短暂显示字符',
               trailing: Switch(
                 value: true,
                 onChanged: (value) {
@@ -123,9 +113,8 @@ class _DevicesCalicyConnectPageState extends State<DevicesCalicyConnectPage>
               ),
               onTap: () {}),
           buildListTile(
-              icon: Icons.call_outlined,
-              title: '通话共享',
-              subtitle: '在其它设备上接听本机的来电',
+              title: '在锁定屏幕上显示媒体',
+              subtitle: '为了方便您快速恢复播放，媒体播放器会在锁定屏幕上保持开启状态',
               trailing: Switch(
                 value: true,
                 onChanged: (value) {
@@ -136,37 +125,15 @@ class _DevicesCalicyConnectPageState extends State<DevicesCalicyConnectPage>
               ),
               onTap: () {}),
           buildListTile(
-              icon: Icons.network_wifi,
-              title: '网络共享',
-              subtitle: '在其它设备无网络连接时，自动使用本机的热点网络或无线局域网连接',
-              trailing: Switch(
-                value: true,
-                onChanged: (value) {
-                  setState(() {
-                    value = value;
-                  });
-                },
-              ),
+              title: '虚拟身份',
+              subtitle: '系统将向应用提供虚拟身份 ID 代替您的设备唯一身份 ID，保护您的个人隐私信息及行为数据',
               onTap: () {}),
-          buildListTile(
-              icon: Icons.camera_alt_outlined,
-              title: '摄像头共享',
-              subtitle: '在其它设备上使用本机作为摄像头',
-              trailing: Switch(
-                value: true,
-                onChanged: (value) {
-                  setState(() {
-                    value = value;
-                  });
-                },
-              ),
-              onTap: () {}),
-          Divider(
+          const Divider(
             height: 1,
           ),
           const ListTile(
             title: Text(
-              '桌面设备',
+              '高级设置',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 12,
@@ -174,10 +141,32 @@ class _DevicesCalicyConnectPageState extends State<DevicesCalicyConnectPage>
             ),
           ),
           buildListTile(
-              icon: Icons.computer_outlined,
-              title: '连接到 Calicy 桌面设备',
-              subtitle: '已连接到 CalicyBook 14\'',
+              title: '允许相机软件扩展程序',
+              subtitle: '使用默认软件实现来提供高级相机功能,例如 HDR、夜间模式或其他相机扩展功能',
+              trailing: Switch(
+                value: true,
+                onChanged: (value) {
+                  setState(() {
+                    value = value;
+                  });
+                },
+              ),
               onTap: () {}),
+          buildListTile(
+              title: '使用应用数据提供个性化服务',
+              subtitle: '允许应用将内容发送到 Calicy',
+              trailing: Switch(
+                value: true,
+                onChanged: (value) {
+                  setState(() {
+                    value = value;
+                  });
+                },
+              ),
+              onTap: () {}),
+          buildListTile(
+              title: '使用情况和诊断信息', subtitle: '分享数据以帮助改进 Calicy', onTap: () {}),
+          buildListTile(title: '手机分身', onTap: () {}),
         ],
       ),
     );

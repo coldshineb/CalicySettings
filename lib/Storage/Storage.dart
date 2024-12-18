@@ -38,7 +38,7 @@ class _StoragePageState extends State<StoragePage> with Components {
                 ),
                 const SizedBox(height: 8),
                 LinearProgressIndicator(
-                  value: 0.5,
+                  value: 102 / 1024,
                   minHeight: 10,
                   valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
                   borderRadius: BorderRadius.circular(10),
@@ -133,8 +133,8 @@ class _StoragePageState extends State<StoragePage> with Components {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              child: Icon(Icons.movie_creation_outlined,
-                  color: Colors.grey[500]),
+              child:
+                  Icon(Icons.movie_creation_outlined, color: Colors.grey[500]),
             ),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -172,8 +172,7 @@ class _StoragePageState extends State<StoragePage> with Components {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              child: Icon(Icons.folder_outlined,
-                  color: Colors.grey[500]),
+              child: Icon(Icons.folder_outlined, color: Colors.grey[500]),
             ),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -223,7 +222,8 @@ class _StoragePageState extends State<StoragePage> with Components {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              child: Icon(Icons.system_security_update_good_outlined, color: Colors.grey[500]),
+              child: Icon(Icons.system_security_update_good_outlined,
+                  color: Colors.grey[500]),
             ),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -238,21 +238,23 @@ class _StoragePageState extends State<StoragePage> with Components {
               valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
             ),
             onTap: () {
-              showDialog(context: context, builder:
-                  (BuildContext context) {
-                return AlertDialog.adaptive(
-                  content: const Text('这包括操作系统和使手机保持顺畅运行所需的文件。为了保护这些文件的完整性，您无法访问这些文件。'),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text('确定'),
-                    ),
-                  ],
-                  buttonPadding: const EdgeInsets.all(16),
-                );
-              });
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog.adaptive(
+                      content: const Text(
+                          '这包括操作系统和使手机保持顺畅运行所需的文件。为了保护这些文件的完整性，您无法访问这些文件。'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('确定'),
+                        ),
+                      ],
+                      buttonPadding: const EdgeInsets.all(16),
+                    );
+                  });
             },
           ),
           ListTile(
@@ -273,21 +275,23 @@ class _StoragePageState extends State<StoragePage> with Components {
               valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
             ),
             onTap: () {
-              showDialog(context: context, builder:
-                  (BuildContext context) {
-                return AlertDialog.adaptive(
-                  content: const Text('这包括缓存和操作系统所需的其他临时文件。您可能会注意到存储空间用量会随时间推移而发生变化。'),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text('确定'),
-                    ),
-                  ],
-                  buttonPadding: const EdgeInsets.all(16),
-                );
-              });
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog.adaptive(
+                      content: const Text(
+                          '这包括缓存和操作系统所需的其他临时文件。您可能会注意到存储空间用量会随时间推移而发生变化。'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('确定'),
+                        ),
+                      ],
+                      buttonPadding: const EdgeInsets.all(16),
+                    );
+                  });
             },
           ),
           Divider(

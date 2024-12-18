@@ -1,7 +1,7 @@
-import 'package:calicy_settings/Launcher/AtAGlance.dart';
 import 'package:flutter/material.dart';
 
 import '../Components.dart';
+import 'AtAGlance.dart';
 
 class LauncherPage extends StatefulWidget {
   const LauncherPage({super.key});
