@@ -401,7 +401,7 @@ class _MyHomePageState extends State<MyHomePage> with Components {
                   Colors.grey,
                   Icons.more_horiz_outlined,
                   '更多设置',
-                  '辅助功能、开发者选项',
+                  '辅助功能',
                       () {
                     Navigator.push(
                         context, calicyPageRoute(const MorePage()));

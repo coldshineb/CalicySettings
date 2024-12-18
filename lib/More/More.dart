@@ -56,13 +56,6 @@ class _MorePageState extends State<MorePage> with Components {
             title: '单手模式',
             onTap: () {},
           ),
-          Divider(
-            height: 1,
-          ),
-          buildListTile(
-            title: '开发者选项',
-            onTap: () {},
-          ),
         ],
       ),
     );
